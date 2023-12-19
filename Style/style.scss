@@ -17,20 +17,24 @@ body {
     font-family: sans-serif;
 }
 
+::selection {
+    background-color: transparent;
+}
+
 textarea::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 
     &-track {
         background: #232733;
     }
 
     &-thumb {
-        background: #171f62;
+        background: #606060;
         border-radius: 10px;
         cursor: none;
 
         &:hover {
-            background: #1c2579;
+            background: #858585;
         }
     }
 }
@@ -68,10 +72,6 @@ textarea::-webkit-scrollbar {
         left: 0;
     }
 
-    .edit-section {
-        position: relative;
-    }
-
     .input-section,
     .output-section {
         width: 300px;
@@ -95,6 +95,57 @@ textarea::-webkit-scrollbar {
             color: white;
             font-family: sans-serif;
             direction: rtl;
+
+            &::selection {
+                background-color: #1d16ae;
+                color: rgb(59, 255, 255);
+            }
+        }
+
+        &:hover .input-btn-container {
+            transition: opacity 0.25s;
+            opacity: 1;
+        }
+
+        .input-btn-container {
+            width: 100%;
+            height: 55px;
+            position: absolute;
+            bottom: 0;
+            // border: 1px solid red;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            background: rgba(15, 17, 18, 0.8);
+            // box-shadow: 0 0 3px 3px rgba(15, 17, 18, 0.6);
+            opacity: 0;
+            transition: opacity 1s 0.5s;
+
+            .submit-input,
+            .copy-output {
+                width: 100px;
+                height: 30px;
+                border: none;
+                background: #222;
+                color: white;
+                border-radius: 5px;
+                border: 2px solid gray;
+                border-top: 1px solid gray;
+                border-bottom: 3px solid gray;
+                cursor: pointer;
+                transition: background-color 0.15s, border 0.1s;
+                letter-spacing: 0.8px;
+
+                &:hover {
+                    background: #1a1a1a;
+                }
+
+                &:active {
+                    border-top: 2px solid gray;
+                    border-bottom: 2px solid gray;
+                }
+            }
         }
     }
 
@@ -104,12 +155,86 @@ textarea::-webkit-scrollbar {
         height: 80%;
         border-radius: 10px;
         overflow: hidden;
-        position: relative;
         padding-top: 30px;
         background: #3e404a;
+        position: relative;
+        direction: rtl;
+
+        .edit-list-container {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 5px;
+            padding: 5px;
+
+            .member-row {
+                // display: ;
+                border: 1px solid rgb(61, 61, 255);
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                font-size: 18px;
+                height: 33px;
+                background: rgb(43, 43, 144);
+                border-radius: 5px;
+                padding-right: 10px;
+                overflow: hidden;
+
+                .member-info {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 4px;
+                    width: 285px;
+
+                    .member-name {
+                        white-space: nowrap;
+                    }
+
+                    .member-id {
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+
+                .action-btns {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: center;
+                    align-items: center;
+
+                    .action-btn {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                    }
+
+                    .add-to-end {
+                        border: 1px solid yellow;
+                        height: 33px;
+                        width: 33px;
+                        background-color: rgb(119, 119, 55);
+                    }
+
+                    .delete-member {
+                        border: 1px solid rgb(255, 0, 0);
+                        height: 33px;
+                        width: 33px;
+                        background-color: rgb(119, 55, 55);
+                    }
+                }
+            }
+        }
     }
 
-    .arrow-indicator{
+    .arrow-indicator {
         font-size: 100px;
         font-family: monospace;
         margin: 30px;
@@ -129,4 +254,5 @@ textarea::-webkit-scrollbar {
     align-items: center;
     text-decoration: none;
     color: rgb(237, 235, 232);
+    cursor: pointer;
 }

@@ -17,19 +17,27 @@ body {
   font-family: sans-serif;
 }
 
+::-moz-selection {
+  background-color: transparent;
+}
+
+::selection {
+  background-color: transparent;
+}
+
 textarea::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 textarea::-webkit-scrollbar-track {
   background: #232733;
 }
 textarea::-webkit-scrollbar-thumb {
-  background: #171f62;
+  background: #606060;
   border-radius: 10px;
   cursor: none;
 }
 textarea::-webkit-scrollbar-thumb:hover {
-  background: #1c2579;
+  background: #858585;
 }
 
 .page-header-section {
@@ -62,9 +70,6 @@ textarea::-webkit-scrollbar-thumb:hover {
   top: 0;
   left: 0;
 }
-.page-main-section .edit-section {
-  position: relative;
-}
 .page-main-section .input-section,
 .page-main-section .output-section {
   width: 300px;
@@ -91,14 +96,138 @@ textarea::-webkit-scrollbar-thumb:hover {
   font-family: sans-serif;
   direction: rtl;
 }
+.page-main-section .input-section .input-list::-moz-selection, .page-main-section .input-section .output-list::-moz-selection, .page-main-section .output-section .input-list::-moz-selection, .page-main-section .output-section .output-list::-moz-selection {
+  background-color: #1d16ae;
+  color: rgb(59, 255, 255);
+}
+.page-main-section .input-section .input-list::selection,
+.page-main-section .input-section .output-list::selection,
+.page-main-section .output-section .input-list::selection,
+.page-main-section .output-section .output-list::selection {
+  background-color: #1d16ae;
+  color: rgb(59, 255, 255);
+}
+.page-main-section .input-section:hover .input-btn-container,
+.page-main-section .output-section:hover .input-btn-container {
+  transition: opacity 0.25s;
+  opacity: 1;
+}
+.page-main-section .input-section .input-btn-container,
+.page-main-section .output-section .input-btn-container {
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: rgba(15, 17, 18, 0.8);
+  opacity: 0;
+  transition: opacity 1s 0.5s;
+}
+.page-main-section .input-section .input-btn-container .submit-input,
+.page-main-section .input-section .input-btn-container .copy-output,
+.page-main-section .output-section .input-btn-container .submit-input,
+.page-main-section .output-section .input-btn-container .copy-output {
+  width: 100px;
+  height: 30px;
+  border: none;
+  background: #222;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 3px solid gray;
+  cursor: pointer;
+  transition: background-color 0.15s, border 0.1s;
+  letter-spacing: 0.8px;
+}
+.page-main-section .input-section .input-btn-container .submit-input:hover,
+.page-main-section .input-section .input-btn-container .copy-output:hover,
+.page-main-section .output-section .input-btn-container .submit-input:hover,
+.page-main-section .output-section .input-btn-container .copy-output:hover {
+  background: #1a1a1a;
+}
+.page-main-section .input-section .input-btn-container .submit-input:active,
+.page-main-section .input-section .input-btn-container .copy-output:active,
+.page-main-section .output-section .input-btn-container .submit-input:active,
+.page-main-section .output-section .input-btn-container .copy-output:active {
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
 .page-main-section .edit-section {
   width: 400px;
   height: 80%;
   border-radius: 10px;
   overflow: hidden;
-  position: relative;
   padding-top: 30px;
   background: #3e404a;
+  position: relative;
+  direction: rtl;
+}
+.page-main-section .edit-section .edit-list-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 5px;
+}
+.page-main-section .edit-section .edit-list-container .member-row {
+  border: 1px solid rgb(61, 61, 255);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  height: 33px;
+  background: rgb(43, 43, 144);
+  border-radius: 5px;
+  padding-right: 10px;
+  overflow: hidden;
+}
+.page-main-section .edit-section .edit-list-container .member-row .member-info {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  width: 285px;
+}
+.page-main-section .edit-section .edit-list-container .member-row .member-info .member-name {
+  white-space: nowrap;
+}
+.page-main-section .edit-section .edit-list-container .member-row .member-info .member-id {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.page-main-section .edit-section .edit-list-container .member-row .action-btns {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.page-main-section .edit-section .edit-list-container .member-row .action-btns .action-btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.page-main-section .edit-section .edit-list-container .member-row .action-btns .add-to-end {
+  border: 1px solid yellow;
+  height: 33px;
+  width: 33px;
+  background-color: rgb(119, 119, 55);
+}
+.page-main-section .edit-section .edit-list-container .member-row .action-btns .delete-member {
+  border: 1px solid rgb(255, 0, 0);
+  height: 33px;
+  width: 33px;
+  background-color: rgb(119, 55, 55);
 }
 .page-main-section .arrow-indicator {
   font-size: 100px;
@@ -118,4 +247,5 @@ textarea::-webkit-scrollbar-thumb:hover {
   align-items: center;
   text-decoration: none;
   color: rgb(237, 235, 232);
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
