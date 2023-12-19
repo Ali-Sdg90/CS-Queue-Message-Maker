@@ -3,57 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link rel="stylesheet" href="Style/style.css" />
+        <title>CS-Queue-Message-Maker</title>
     </head>
     <body>
-        <ul id="myList">
-            <li>Hello1</li>
-            <li>Hello2</li>
-            <li>Hello3</li>
-            <li>Hello4</li>
-        </ul>
-
-        <button onclick="changeOrder()">Change Order</button>
-        <button onclick="delete3()">Delete3</button>
-
-        <script type="module">
-            import autoAnimate from "https://cdn.jsdelivr.net/npm/@formkit/auto-animate";
-            autoAnimate(document.getElementById("myList"));
-        </script>
-        <script>
-            const changeOrder = () => {
-                const myList = document.getElementById("myList");
-                const listItems = myList.getElementsByTagName("li");
-
-                // Convert HTMLCollection to array for easier manipulation
-                const itemsArray = Array.from(listItems);
-
-                // Reverse the order of the array
-                itemsArray.reverse();
-
-                // Append the items in the new order to the list
-                itemsArray.forEach(function (item) {
-                    myList.appendChild(item);
-                });
-            };
-
-            const delete3 = () => {
-                const myList = document.getElementById("myList");
-                const listItems = myList.getElementsByTagName("li");
-
-                const itemsArray = Array.from(listItems);
-
-                console.log(itemsArray);
-
-                itemsArray.splice(2, 1);
-
-                console.log(itemsArray);
-
-                myList.innerHTML = "";
-                itemsArray.forEach(function (item) {
-                    myList.appendChild(item);
-                });
-            };
-        </script>
+        <script src="JS/index.js"></script>
     </body>
 </html>
