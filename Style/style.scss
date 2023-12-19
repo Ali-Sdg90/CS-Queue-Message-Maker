@@ -2,11 +2,131 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    cursor: default;
 }
 
 body {
-    background: #222;
-    color: white;
+    background: rgb(27, 29, 31);
+    color: rgb(237, 235, 232);
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+textarea::-webkit-scrollbar {
+    width: 10px;
+
+    &-track {
+        background: #232733;
+    }
+
+    &-thumb {
+        background: #171f62;
+        border-radius: 10px;
+        cursor: none;
+
+        &:hover {
+            background: #1c2579;
+        }
+    }
+}
+
+.page-header-section {
+    // border: 1px solid red;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    height: 10vh;
+    text-shadow: 2.5px 0 rgba(98, 0, 255, 0.4), -2.5px 0 rgba(255, 0, 0, 0.4);
+}
+
+.page-main-section {
+    // border: 1px solid blue;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    .section-header {
+        width: 100%;
+        background: rgb(15, 17, 18);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .edit-section {
+        position: relative;
+    }
+
+    .input-section,
+    .output-section {
+        width: 300px;
+        border: 1px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        overflow: hidden;
+        height: 80%;
+        position: relative;
+        padding-top: 30px;
+
+        .input-list,
+        .output-list {
+            width: 100%;
+            height: 100%;
+            background: #3e404a;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            padding: 5px;
+            resize: none;
+            color: white;
+            font-family: sans-serif;
+            direction: rtl;
+        }
+    }
+
+    .edit-section {
+        // border: 1px solid red;
+        width: 400px;
+        height: 80%;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+        padding-top: 30px;
+        background: #3e404a;
+    }
+
+    .arrow-indicator{
+        font-size: 100px;
+        font-family: monospace;
+        margin: 30px;
+    }
+}
+
+.page-footer-section {
+    height: 7vh;
+    font-size: 20px;
+    letter-spacing: 2px;
+    background: rgb(15, 17, 18);
+    width: 100%;
+    // border: 1px solid yellow;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(237, 235, 232);
 }

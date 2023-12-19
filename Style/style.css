@@ -2,11 +2,120 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  cursor: default;
 }
 
 body {
-  background: #222;
-  color: white;
+  background: rgb(27, 29, 31);
+  color: rgb(237, 235, 232);
   width: 100%;
   height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+textarea::-webkit-scrollbar {
+  width: 10px;
+}
+textarea::-webkit-scrollbar-track {
+  background: #232733;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: #171f62;
+  border-radius: 10px;
+  cursor: none;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #1c2579;
+}
+
+.page-header-section {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-end;
+  height: 10vh;
+  text-shadow: 2.5px 0 rgba(98, 0, 255, 0.4), -2.5px 0 rgba(255, 0, 0, 0.4);
+}
+
+.page-main-section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.page-main-section .section-header {
+  width: 100%;
+  background: rgb(15, 17, 18);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page-main-section .edit-section {
+  position: relative;
+}
+.page-main-section .input-section,
+.page-main-section .output-section {
+  width: 300px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 80%;
+  position: relative;
+  padding-top: 30px;
+}
+.page-main-section .input-section .input-list,
+.page-main-section .input-section .output-list,
+.page-main-section .output-section .input-list,
+.page-main-section .output-section .output-list {
+  width: 100%;
+  height: 100%;
+  background: #3e404a;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 5px;
+  resize: none;
+  color: white;
+  font-family: sans-serif;
+  direction: rtl;
+}
+.page-main-section .edit-section {
+  width: 400px;
+  height: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  padding-top: 30px;
+  background: #3e404a;
+}
+.page-main-section .arrow-indicator {
+  font-size: 100px;
+  font-family: monospace;
+  margin: 30px;
+}
+
+.page-footer-section {
+  height: 7vh;
+  font-size: 20px;
+  letter-spacing: 2px;
+  background: rgb(15, 17, 18);
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(237, 235, 232);
 }/*# sourceMappingURL=style.css.map */
