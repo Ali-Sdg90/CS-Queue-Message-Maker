@@ -140,6 +140,87 @@ const addNewMemberForm = () => {
     tempDiv.classList.add("add-member");
     tempDiv.innerHTML = addMemberStructure;
     editList.appendChild(tempDiv);
+
+    (document.querySelector(".add-member") as HTMLElement).addEventListener(
+        "submit",
+        (event) => {
+            event.preventDefault();
+            console.log(event);
+        }
+    );
+
+    (document.querySelector(".add-member-btn") as HTMLElement).addEventListener(
+        "click",
+        () => {
+            const memberName = (
+                document.querySelector(".member-name-input") as HTMLInputElement
+            ).value;
+
+            const memberID = (
+                document.querySelector(".member-id-input") as HTMLInputElement
+            ).value;
+
+            if (memberName && memberID) {
+                console.log("HI", memberName, memberID);
+
+                const newMemberIndex = memberBits.length;
+
+                const newMemberHTML = `
+                    <div class="member-info">
+                        <div class="member-index">${newMemberIndex + 1}</div>
+                        <div>-</div>
+                        <div class="member-name">${memberName}</div>
+                        <div class="member-id">${memberID}</div>
+                    </div>
+                
+                    <div class="action-btns">
+                        <div class="action-btn add-to-end-${newMemberIndex}"></div>
+                        <div class="action-btn delete-member-${newMemberIndex}"></div>
+                    </div>
+                `;
+
+                const tempDiv = document.createElement("div");
+                tempDiv.classList.add(`member-row-${newMemberIndex}`);
+                tempDiv.innerHTML = newMemberHTML;
+                editList.appendChild(tempDiv);
+
+                (
+                    document.querySelector(
+                        `.add-to-end-${newMemberIndex}`
+                    ) as HTMLElement
+                ).addEventListener("click", () => {
+                    console.log("CLICK");
+
+                    addMemberToEnd(newMemberIndex);
+                });
+
+                (
+                    document.querySelector(
+                        `.delete-member-${newMemberIndex}`
+                    ) as HTMLElement
+                ).addEventListener("click", () => {
+                    deleteMember(newMemberIndex);
+                });
+
+                memberBits.push([
+                    `${newMemberIndex + 1}-`,
+                    memberName,
+                    memberID,
+                ]);
+
+                rerenderAddMember();
+
+                console.log("=>", memberBits);
+            }
+        }
+    );
+};
+
+const rerenderAddMember = () => {
+    // console.log("INSIDEEEEEEEEEEEEEEEEEEEEEEEEEE");
+
+    document.querySelector(".add-member")?.remove();
+    addNewMemberForm();
 };
 
 const updateIndexes = (): void => {
@@ -161,8 +242,7 @@ const addMemberToEnd = (memberIndex: number): void => {
         updateIndexes();
     }, 100);
 
-    document.querySelector(".add-member")?.remove();
-    addNewMemberForm();
+    rerenderAddMember();
 };
 
 const deleteMember = (memberIndex: number): void => {
