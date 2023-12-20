@@ -16,30 +16,32 @@ input.value = `آپدیت صف #وب 👇🏻
 9- ابولفضل حصارکی @Abolfazl_hsr
 10- مبینا وجدی @M0bio
 11- الیاس اسماعیلی @elias_esm
-12-  آرش ثانی @Arashsani
+12- آرش ثانی @Arashsani
 13- محمد شفیعی @mshafiei1
-14-  امیرحسین بشیری @Amirhosseinshonam
-15- مبین صالحی @Mwbi_slh
-16-  آریا شریف @TSN963
-17- فاطمه امینی @Fatemeh_amini13
-18- محدثه قهرمانی @M_ghahremaniii7
-19- معصومه دادبخش @Masoomeh_dadbakhsh
-20- علیرضا فتحی @ItsAlirezzz
-21-  آیدا پیمائی @aida_ap7
-22- محمد چنانی @developer_codee
-23-  آرزو روحی @Wish1375
-24- مهیار سعدی @There_is_no_user
-25- مهدی ملکی @M_maleki1370
-26- مرضیه بیرانوند @MGityB
-27- علی رفیعی @ART91128LJ
-28-  سپهر ملکی @smplo
-29-  اسحاق ترابی @kafipasargad
-30- عرفان اکبری @Erfan25974
-31- محدثه شیخ‌ اویسی @Mohisho
-32- حسام مظلوم @hesam_0101
-33- امیرحسین ارندان @AmirhoseinArandan
+14- امیرحسین بشیری @Amirhosseinshonam
 
 #وب`;
+
+
+// 15- مبین صالحی @Mwbi_slh
+// 16-  آریا شریف @TSN963
+// 17- فاطمه امینی @Fatemeh_amini13
+// 18- محدثه قهرمانی @M_ghahremaniii7
+// 19- معصومه دادبخش @Masoomeh_dadbakhsh
+// 20- علیرضا فتحی @ItsAlirezzz
+// 21-  آیدا پیمائی @aida_ap7
+// 22- محمد چنانی @developer_codee
+// 23-  آرزو روحی @Wish1375
+// 24- مهیار سعدی @There_is_no_user
+// 25- مهدی ملکی @M_maleki1370
+// 26- مرضیه بیرانوند @MGityB
+// 27- علی رفیعی @ART91128LJ
+// 28-  سپهر ملکی @smplo
+// 29-  اسحاق ترابی @kafipasargad
+// 30- عرفان اکبری @Erfan25974
+// 31- محدثه شیخ‌ اویسی @Mohisho
+// 32- حسام مظلوم @hesam_0101
+// 33- امیرحسین ارندان @AmirhoseinArandan
 
 const submitInput = document.querySelector(".submit-input") as HTMLElement;
 
@@ -73,7 +75,7 @@ const convertInputToEditableList = () => {
         return memberArray.split(" ");
     });
 
-    console.log(memberBits);
+    console.log(JSON.stringify(memberBits, null, 2));
 
     editList.innerHTML = "";
 
@@ -209,16 +211,15 @@ const addNewMemberForm = () => {
                 ]);
 
                 rerenderAddMember();
+                updateIndexes();
 
-                console.log("=>", memberBits);
+                console.log(JSON.stringify(memberBits, null, 2));
             }
         }
     );
 };
 
 const rerenderAddMember = () => {
-    // console.log("INSIDEEEEEEEEEEEEEEEEEEEEEEEEEE");
-
     document.querySelector(".add-member")?.remove();
     addNewMemberForm();
 };
@@ -229,6 +230,7 @@ const updateIndexes = (): void => {
     for (let i = 0; i < memberBits.length; i++) {
         if (indexElements[i]) {
             indexElements[i].textContent = (i + 1).toString();
+            // memberBits
         }
     }
 };
@@ -237,6 +239,15 @@ const addMemberToEnd = (memberIndex: number): void => {
     editList.appendChild(
         document.querySelector(`.member-row-${memberIndex}`) as HTMLElement
     );
+
+    const selectedMember = memberBits[memberIndex];
+    console.log("::", JSON.stringify(selectedMember, null, 2));
+
+    memberBits.splice(memberIndex, 1);
+    // setTimeout(() => {
+    memberBits.push(selectedMember);
+    console.log(JSON.stringify(memberBits, null, 2));
+    // }, 500);
 
     setTimeout(() => {
         updateIndexes();
@@ -248,6 +259,8 @@ const addMemberToEnd = (memberIndex: number): void => {
 const deleteMember = (memberIndex: number): void => {
     memberBits.splice(memberIndex, 1);
     document.querySelector(`.member-row-${memberIndex}`)?.remove();
+
+    console.log(JSON.stringify(memberBits, null, 2));
 
     updateIndexes();
 };
