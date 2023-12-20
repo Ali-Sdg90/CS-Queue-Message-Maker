@@ -25,18 +25,18 @@ body {
   background-color: transparent;
 }
 
-textarea::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 8px;
 }
-textarea::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background: #232733;
 }
-textarea::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #606060;
   border-radius: 10px;
   cursor: none;
 }
-textarea::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: #858585;
 }
 
@@ -52,7 +52,7 @@ textarea::-webkit-scrollbar-thumb:hover {
 
 .page-main-section {
   width: 100%;
-  height: 100%;
+  height: 83vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -167,14 +167,16 @@ textarea::-webkit-scrollbar-thumb:hover {
   direction: rtl;
 }
 .page-main-section .edit-section .edit-list-container {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 5px;
+  min-height: 300px;
+  height: 100%;
+}
+.page-main-section .edit-section .edit-list-container .edit-list {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
   padding: 5px;
 }
-.page-main-section .edit-section .edit-list-container .member-row {
+.page-main-section .edit-section .edit-list-container .edit-list .member-row {
   border: 1px solid rgb(61, 61, 255);
   display: flex;
   flex-flow: row nowrap;
@@ -187,43 +189,44 @@ textarea::-webkit-scrollbar-thumb:hover {
   border-radius: 5px;
   padding-right: 10px;
   overflow: hidden;
+  margin-bottom: 5px;
 }
-.page-main-section .edit-section .edit-list-container .member-row .member-info {
+.page-main-section .edit-section .edit-list-container .edit-list .member-row .member-info {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
   align-items: center;
   gap: 4px;
-  width: 285px;
+  width: calc(100% - 66px);
 }
-.page-main-section .edit-section .edit-list-container .member-row .member-info .member-name {
+.page-main-section .edit-section .edit-list-container .edit-list .member-row .member-info .member-name {
   white-space: nowrap;
 }
-.page-main-section .edit-section .edit-list-container .member-row .member-info .member-id {
+.page-main-section .edit-section .edit-list-container .edit-list .member-row .member-info .member-id {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.page-main-section .edit-section .edit-list-container .member-row .action-btns {
+.page-main-section .edit-section .edit-list-container .edit-list .member-row .action-btns {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 }
-.page-main-section .edit-section .edit-list-container .member-row .action-btns .action-btn {
+.page-main-section .edit-section .edit-list-container .edit-list .member-row .action-btns .action-btn {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
   cursor: pointer;
 }
-.page-main-section .edit-section .edit-list-container .member-row .action-btns .add-to-end {
+.page-main-section .edit-section .edit-list-container .edit-list .member-row .action-btns [class*=add-to-end] {
   border: 1px solid yellow;
   height: 33px;
   width: 33px;
   background-color: rgb(119, 119, 55);
 }
-.page-main-section .edit-section .edit-list-container .member-row .action-btns .delete-member {
+.page-main-section .edit-section .edit-list-container .edit-list .member-row .action-btns [class*=delete-member] {
   border: 1px solid rgb(255, 0, 0);
   height: 33px;
   width: 33px;

@@ -5,8 +5,8 @@ const output = document.querySelector(".output-list");
 input.value = `آپدیت صف #وب 👇🏻
 
 1- فاطمه رضایی @Rezaie_f98 
-2- فرشاد دولت‌یاری @Farshad_80_1 
-3- شایان رجبی @Shayan_rajaby
+2- فرشاد دولت‌ یاری @Farshad_80_1 
+3-  سلام یوهو کمک شایان رجبی @Shayan_rajaby
 4- ریحانه روحی @reyh_an
 5- علی قاسم‌پور @AliAkbar00100
 6- ارشیا مردانی @mozadvaj
@@ -39,5 +39,63 @@ input.value = `آپدیت صف #وب 👇🏻
 33- امیرحسین ارندان @AmirhoseinArandan
 
 #وب`;
-output.value = input.value;
+const submitInput = document.querySelector(".submit-input");
+submitInput.addEventListener("click", () => {
+    console.log("submit");
+    convertInputToEditableList();
+});
+let inputArray = [];
+let membersArray = [];
+let course = "";
+const editList = document.querySelector(".edit-list");
+const convertInputToEditableList = () => {
+    inputArray = input.value.split("\n");
+    course = inputArray[inputArray.length - 1];
+    for (let i = 2; i < inputArray.length - 2; i++) {
+        membersArray.push(inputArray[i]);
+    }
+    let memberBits = membersArray.map((memberArray) => {
+        return memberArray.split(" ");
+    });
+    console.log(memberBits);
+    editList.innerHTML = "";
+    for (let i = 0; i < memberBits.length; i++) {
+        editList.innerHTML += `
+            <div class="member-row">
+                <div class="member-info">
+                    <div class="member-index">1</div>
+                    <div>-</div>
+                    <div class="member-name">${nameFinder(memberBits[i])}</div>
+                    <div class="member-id">${IDFinder(memberBits[i])}</div>
+                </div>
+        
+                <div class="action-btns">
+                    <div class="action-btn add-to-end(${i})">E</div>
+                    <div class="action-btn delete-member${i}">D</div>
+                </div>
+            </div>
+        `;
+    }
+};
+const nameFinder = (memberBit) => {
+    let memberName = "";
+    for (let i = 1; i < memberBit.length; i++) {
+        if (memberBit[i].includes("@")) {
+            break;
+        }
+        else {
+            memberName += memberBit[i];
+            memberName += " ";
+        }
+    }
+    memberName = memberName.slice(0, -1);
+    return memberName;
+};
+const IDFinder = (memberBit) => {
+    for (let i = 1; i < memberBit.length; i++) {
+        if (memberBit[i].includes("@")) {
+            return memberBit[i];
+        }
+    }
+};
 //# sourceMappingURL=index.js.map

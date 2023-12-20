@@ -21,7 +21,7 @@ body {
     background-color: transparent;
 }
 
-textarea::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 8px;
 
     &-track {
@@ -53,7 +53,8 @@ textarea::-webkit-scrollbar {
 .page-main-section {
     // border: 1px solid blue;
     width: 100%;
-    height: 100%;
+    // height: 100%;
+    height: 83vh;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -161,73 +162,78 @@ textarea::-webkit-scrollbar {
         direction: rtl;
 
         .edit-list-container {
-            display: flex;
-            flex-flow: column nowrap;
-            justify-content: flex-start;
-            align-items: flex-start;
-            gap: 5px;
-            padding: 5px;
+            min-height: 300px;
+            height: 100%;
 
-            .member-row {
-                // display: ;
-                border: 1px solid rgb(61, 61, 255);
-                display: flex;
-                flex-flow: row nowrap;
-                justify-content: space-between;
-                align-items: center;
+            .edit-list {
+                // border: 1px solid red;
                 width: 100%;
-                font-size: 18px;
-                height: 33px;
-                background: rgb(43, 43, 144);
-                border-radius: 5px;
-                padding-right: 10px;
-                overflow: hidden;
+                height: 100%;
+                overflow: auto;
+                padding: 5px;
 
-                .member-info {
+                .member-row {
+                    // display: ;
+                    border: 1px solid rgb(61, 61, 255);
                     display: flex;
                     flex-flow: row nowrap;
-                    justify-content: flex-start;
+                    justify-content: space-between;
                     align-items: center;
-                    gap: 4px;
-                    width: 285px;
+                    width: 100%;
+                    font-size: 18px;
+                    height: 33px;
+                    background: rgb(43, 43, 144);
+                    border-radius: 5px;
+                    padding-right: 10px;
+                    overflow: hidden;
+                    margin-bottom: 5px;
 
-                    .member-name {
-                        white-space: nowrap;
+                    .member-info {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 4px;
+                        width: calc(100% - 66px);
+
+                        .member-name {
+                            white-space: nowrap;
+                        }
+
+                        .member-id {
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
                     }
 
-                    .member-id {
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                    }
-                }
-
-                .action-btns {
-                    display: flex;
-                    flex-flow: row nowrap;
-                    justify-content: center;
-                    align-items: center;
-
-                    .action-btn {
+                    .action-btns {
                         display: flex;
                         flex-flow: row nowrap;
                         justify-content: center;
                         align-items: center;
-                        cursor: pointer;
-                    }
 
-                    .add-to-end {
-                        border: 1px solid yellow;
-                        height: 33px;
-                        width: 33px;
-                        background-color: rgb(119, 119, 55);
-                    }
+                        .action-btn {
+                            display: flex;
+                            flex-flow: row nowrap;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                        }
 
-                    .delete-member {
-                        border: 1px solid rgb(255, 0, 0);
-                        height: 33px;
-                        width: 33px;
-                        background-color: rgb(119, 55, 55);
+                        [class*="add-to-end"] {
+                            border: 1px solid yellow;
+                            height: 33px;
+                            width: 33px;
+                            background-color: rgb(119, 119, 55);
+                        }
+
+                        [class*="delete-member"] {
+                            border: 1px solid rgb(255, 0, 0);
+                            height: 33px;
+                            width: 33px;
+                            background-color: rgb(119, 55, 55);
+                        }
                     }
                 }
             }
