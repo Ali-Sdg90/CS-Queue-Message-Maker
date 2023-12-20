@@ -6,7 +6,7 @@ input.value = `آپدیت صف #وب 👇🏻
 
 1- فاطمه رضایی @Rezaie_f98 
 2- فرشاد دولت‌ یاری @Farshad_80_1 
-3-  سلام یوهو کمک شایان رجبی @Shayan_rajaby
+3- سلام یوهو کمک شایان رجبی @Shayan_rajaby
 4- ریحانه روحی @reyh_an
 5- علی قاسم‌پور @AliAkbar00100
 6- ارشیا مردانی @mozadvaj
@@ -46,6 +46,7 @@ submitInput.addEventListener("click", () => {
 });
 let inputArray = [];
 let membersArray = [];
+let memberBits = [];
 let course = "";
 const editList = document.querySelector(".edit-list");
 const convertInputToEditableList = () => {
@@ -54,28 +55,57 @@ const convertInputToEditableList = () => {
     for (let i = 2; i < inputArray.length - 2; i++) {
         membersArray.push(inputArray[i]);
     }
-    let memberBits = membersArray.map((memberArray) => {
+    memberBits = membersArray.map((memberArray) => {
         return memberArray.split(" ");
     });
     console.log(memberBits);
+    updateList();
+};
+const updateList = () => {
     editList.innerHTML = "";
     for (let i = 0; i < memberBits.length; i++) {
         editList.innerHTML += `
-            <div class="member-row">
+            <div class="member-row-${i}">
                 <div class="member-info">
-                    <div class="member-index">1</div>
+                    <div class="member-index">${i + 1}</div>
                     <div>-</div>
                     <div class="member-name">${nameFinder(memberBits[i])}</div>
                     <div class="member-id">${IDFinder(memberBits[i])}</div>
                 </div>
         
                 <div class="action-btns">
-                    <div class="action-btn add-to-end(${i})">E</div>
-                    <div class="action-btn delete-member${i}">D</div>
+                    <div class="action-btn add-to-end-${i}">E</div>
+                    <div class="action-btn delete-member-${i}">D</div>
                 </div>
             </div>
         `;
     }
+    for (let i = 0; i < memberBits.length; i++) {
+        document.querySelector(`.add-to-end-${i}`).addEventListener("click", () => {
+            addMemberToEnd(i);
+        });
+        document.querySelector(`.delete-member-${i}`).addEventListener("click", () => {
+            deleteMember(i);
+        });
+    }
+};
+const updateIndexes = () => {
+    const indexElements = document.querySelectorAll(".member-index");
+    for (let i = 0; i < memberBits.length; i++) {
+        if (indexElements[i]) {
+            indexElements[i].textContent = (i + 1).toString();
+        }
+    }
+};
+const addMemberToEnd = (memberIndex) => {
+    memberBits.splice(memberIndex, 1);
+    document.querySelector(`.member-row-${memberIndex}`)?.remove();
+    updateIndexes();
+};
+const deleteMember = (memberIndex) => {
+    memberBits.splice(memberIndex, 1);
+    document.querySelector(`.member-row-${memberIndex}`)?.remove();
+    updateIndexes();
 };
 const nameFinder = (memberBit) => {
     let memberName = "";

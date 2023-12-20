@@ -172,7 +172,7 @@ body {
                 overflow: auto;
                 padding: 5px;
 
-                .member-row {
+                [class*="member-row"] {
                     // display: ;
                     border: 1px solid rgb(61, 61, 255);
                     display: flex;
