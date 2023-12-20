@@ -171,6 +171,9 @@ body {
                 height: 100%;
                 overflow: auto;
                 padding: 5px;
+                display: grid;
+                grid-template-rows: repeat(auto-fill, minmax(33px, 1fr));
+                gap: 5px;
 
                 [class*="member-row"] {
                     // display: ;
@@ -186,7 +189,6 @@ body {
                     border-radius: 5px;
                     padding-right: 10px;
                     overflow: hidden;
-                    margin-bottom: 5px;
 
                     .member-info {
                         display: flex;
@@ -194,7 +196,7 @@ body {
                         justify-content: flex-start;
                         align-items: center;
                         gap: 4px;
-                        width: calc(100% - 66px);
+                        width: calc(100% - 70px);
 
                         .member-name {
                             white-space: nowrap;
@@ -222,17 +224,21 @@ body {
                         }
 
                         [class*="add-to-end"] {
-                            border: 1px solid yellow;
+                            // border: 1px solid yellow;
                             height: 33px;
                             width: 33px;
-                            background-color: rgb(119, 119, 55);
+                            background: url("../Assets/end-icon.png")
+                                    center/23px no-repeat,
+                                rgb(119, 119, 55);
                         }
 
                         [class*="delete-member"] {
-                            border: 1px solid rgb(255, 0, 0);
+                            // border: 1px solid rgb(255, 0, 0);
                             height: 33px;
                             width: 33px;
-                            background-color: rgb(119, 55, 55);
+                            background: url("../Assets/delete-icon.png")
+                                    center/15px no-repeat,
+                                rgb(119, 55, 55);
                         }
                     }
                 }

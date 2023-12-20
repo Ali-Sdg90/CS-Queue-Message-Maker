@@ -62,6 +62,7 @@ const convertInputToEditableList = () => {
 
     course = inputArray[inputArray.length - 1];
 
+    membersArray = [];
     for (let i = 2; i < inputArray.length - 2; i++) {
         membersArray.push(inputArray[i]);
     }
@@ -74,10 +75,6 @@ const convertInputToEditableList = () => {
 
     console.log(memberBits);
 
-    updateList();
-};
-
-const updateList = () => {
     editList.innerHTML = "";
 
     for (let i = 0; i < memberBits.length; i++) {
@@ -91,8 +88,8 @@ const updateList = () => {
                 </div>
         
                 <div class="action-btns">
-                    <div class="action-btn add-to-end-${i}">E</div>
-                    <div class="action-btn delete-member-${i}">D</div>
+                    <div class="action-btn add-to-end-${i}"></div>
+                    <div class="action-btn delete-member-${i}"></div>
                 </div>
             </div>
         `;
@@ -124,10 +121,13 @@ const updateIndexes = (): void => {
 };
 
 const addMemberToEnd = (memberIndex: number): void => {
-    memberBits.splice(memberIndex, 1);
-    document.querySelector(`.member-row-${memberIndex}`)?.remove();
+    editList.appendChild(
+        document.querySelector(`.member-row-${memberIndex}`) as HTMLElement
+    );
 
-    updateIndexes();
+    setTimeout(() => {
+        updateIndexes();
+    }, 100);
 };
 
 const deleteMember = (memberIndex: number): void => {
