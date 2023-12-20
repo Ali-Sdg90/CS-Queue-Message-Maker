@@ -176,7 +176,6 @@ body {
                 gap: 5px;
 
                 [class*="member-row"] {
-                    // display: ;
                     border: 1px solid rgb(61, 61, 255);
                     display: flex;
                     flex-flow: row nowrap;
@@ -239,6 +238,71 @@ body {
                             background: url("../Assets/delete-icon.png")
                                     center/15px no-repeat,
                                 rgb(119, 55, 55);
+                        }
+                    }
+                }
+
+                .add-member {
+                    border: 1px solid rgb(42, 166, 61);
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: rgb(48, 121, 36);
+                    width: 100%;
+                    font-size: 14px;
+                    height: 33px;
+                    border-radius: 5px;
+                    padding: 0 5px 0 10px;
+                    overflow: hidden;
+
+                    .add-member-inputs {
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: center;
+                        align-items: center;
+                        width: 300px;
+                        gap: 10px;
+
+                        input {
+                            background: rgb(0, 68, 0);
+                            border: 1px solid rgb(0, 150, 0);
+                            outline: none;
+                            width: 100%;
+                            border-radius: 5px;
+                            height: 24px;
+                            padding: 3px 5px;
+                            color: white;
+                            cursor: auto;
+
+                            &::selection {
+                                background-color: rgb(70, 187, 64);
+                                color: rgb(0, 73, 0);
+                            }
+                        }
+                    }
+
+                    .add-member-btn {
+                        border: 1px solid rgb(0, 60, 0);
+                        padding: 3px 8px;
+                        border-radius: 5px;
+                        background: rgb(0, 92, 0);
+                        display: flex;
+                        flex-flow: row nowrap;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        letter-spacing: 0.8px;
+                        margin-right: 10px;
+                        transition: background-color 0.15s;
+                        color: white;
+
+                        &:hover {
+                            background-color: rgb(0, 82, 0);
+                        }
+
+                        &:active {
+                            background-color: rgb(0, 72, 0);
                         }
                     }
                 }

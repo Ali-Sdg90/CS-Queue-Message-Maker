@@ -80,12 +80,40 @@ const convertInputToEditableList = () => {
     }
     for (let i = 0; i < memberBits.length; i++) {
         document.querySelector(`.add-to-end-${i}`).addEventListener("click", () => {
+            console.log("CLICK");
             addMemberToEnd(i);
         });
         document.querySelector(`.delete-member-${i}`).addEventListener("click", () => {
             deleteMember(i);
         });
     }
+    addNewMemberForm();
+};
+const addNewMemberForm = () => {
+    const addMemberStructure = `
+        <div class="add-member-inputs">
+            <input
+                type="text"
+                class="member-name-input"
+                placeholder="Full Name"
+                required
+                autocomplete="off"
+            />
+            <input
+                type="text"
+                class="member-id-input"
+                placeholder="Telegram ID"
+                required
+                autocomplete="off"
+            />
+        </div>
+    
+        <button class="add-member-btn">Add</button>
+    `;
+    const tempDiv = document.createElement("form");
+    tempDiv.classList.add("add-member");
+    tempDiv.innerHTML = addMemberStructure;
+    editList.appendChild(tempDiv);
 };
 const updateIndexes = () => {
     const indexElements = document.querySelectorAll(".member-index");
@@ -100,6 +128,8 @@ const addMemberToEnd = (memberIndex) => {
     setTimeout(() => {
         updateIndexes();
     }, 100);
+    document.querySelector(".add-member")?.remove();
+    addNewMemberForm();
 };
 const deleteMember = (memberIndex) => {
     memberBits.splice(memberIndex, 1);

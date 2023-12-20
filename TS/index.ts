@@ -99,6 +99,8 @@ const convertInputToEditableList = () => {
         (
             document.querySelector(`.add-to-end-${i}`) as HTMLElement
         ).addEventListener("click", () => {
+            console.log("CLICK");
+
             addMemberToEnd(i);
         });
 
@@ -108,6 +110,36 @@ const convertInputToEditableList = () => {
             deleteMember(i);
         });
     }
+
+    addNewMemberForm();
+};
+
+const addNewMemberForm = () => {
+    const addMemberStructure = `
+        <div class="add-member-inputs">
+            <input
+                type="text"
+                class="member-name-input"
+                placeholder="Full Name"
+                required
+                autocomplete="off"
+            />
+            <input
+                type="text"
+                class="member-id-input"
+                placeholder="Telegram ID"
+                required
+                autocomplete="off"
+            />
+        </div>
+    
+        <button class="add-member-btn">Add</button>
+    `;
+
+    const tempDiv = document.createElement("form");
+    tempDiv.classList.add("add-member");
+    tempDiv.innerHTML = addMemberStructure;
+    editList.appendChild(tempDiv);
 };
 
 const updateIndexes = (): void => {
@@ -128,6 +160,9 @@ const addMemberToEnd = (memberIndex: number): void => {
     setTimeout(() => {
         updateIndexes();
     }, 100);
+
+    document.querySelector(".add-member")?.remove();
+    addNewMemberForm();
 };
 
 const deleteMember = (memberIndex: number): void => {
