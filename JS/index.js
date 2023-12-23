@@ -6,12 +6,27 @@ input.value = `آپدیت صف #وب 👇🏻
 
 1- فاطمه رضایی @Rezaie_f98 
 2- فرشاد دولت‌ یاری @Farshad_80_1 
+3- سلام یوهو کمک شایان رجبی @Shayan_rajaby
+4- ریحانه روحی @reyh_an
+5- علی قاسم‌پور @AliAkbar00100
+6- ارشیا مردانی @mozadvaj
+7- سعید محمدی @saeed7797
+8- سارا محمدی @pciou
+9- ابولفضل حصارکی @Abolfazl_hsr
+10- مبینا وجدی @M0bio
+11- الیاس اسماعیلی @elias_esm
+12- آرش ثانی @Arashsani
+13- محمد شفیعی @mshafiei1
+14- امیرحسین بشیری @Amirhosseinshonam
+15- مبین صالحی @Mwbi_slh
+16- آریا شریف @TSN963
 
 #وب`;
 const submitInput = document.querySelector(".submit-input");
 submitInput.addEventListener("click", () => {
     console.log("submit");
     convertInputToEditableList();
+    updateOutput();
 });
 let inputArray = [];
 let membersArray = [];
@@ -139,6 +154,7 @@ const updateIndexes = () => {
             indexElements[i].textContent = (i + 1).toString();
         }
     }
+    updateOutput();
 };
 const addMemberToEnd = (memberIndex) => {
     console.log("memberIndex", memberIndex);
@@ -193,4 +209,29 @@ const IDFinder = (memberBit) => {
         }
     }
 };
+const updateOutput = () => {
+    let outputText = "";
+    outputText += `آپدیت صف ${course} 👇🏻\n\n`;
+    for (let i = 0; i < memberBits.length; i++) {
+        outputText += `${i + 1}-`;
+        for (let j = 1; j < memberBits[i].length; j++) {
+            outputText += ` ${memberBits[i][j]}`;
+        }
+        outputText += "\n";
+    }
+    outputText += `\n${course}`;
+    output.textContent = outputText;
+};
+const copyBtn = document.querySelector(".copy-output");
+copyBtn.addEventListener("click", () => {
+    if (output.textContent) {
+        navigator.clipboard.writeText(output.textContent).then(() => {
+            console.log(`Copied to clipboard`);
+            copyBtn.textContent = "Copied";
+            setTimeout(() => {
+                copyBtn.textContent = "Copy";
+            }, 1000);
+        });
+    }
+});
 //# sourceMappingURL=index.js.map
