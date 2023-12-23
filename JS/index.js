@@ -6,18 +6,6 @@ input.value = `آپدیت صف #وب 👇🏻
 
 1- فاطمه رضایی @Rezaie_f98 
 2- فرشاد دولت‌ یاری @Farshad_80_1 
-3- سلام یوهو کمک شایان رجبی @Shayan_rajaby
-4- ریحانه روحی @reyh_an
-5- علی قاسم‌پور @AliAkbar00100
-6- ارشیا مردانی @mozadvaj
-7- سعید محمدی @saeed7797
-8- سارا محمدی @pciou
-9- ابولفضل حصارکی @Abolfazl_hsr
-10- مبینا وجدی @M0bio
-11- الیاس اسماعیلی @elias_esm
-12- آرش ثانی @Arashsani
-13- محمد شفیعی @mshafiei1
-14- امیرحسین بشیری @Amirhosseinshonam
 
 #وب`;
 const submitInput = document.querySelector(".submit-input");
@@ -61,7 +49,7 @@ const convertInputToEditableList = () => {
     }
     for (let i = 0; i < memberBits.length; i++) {
         document.querySelector(`.add-to-end-${i}`).addEventListener("click", () => {
-            console.log("CLICK");
+            console.log(`Move ${i} to End`);
             addMemberToEnd(i);
         });
         document.querySelector(`.delete-member-${i}`).addEventListener("click", () => {
@@ -153,19 +141,33 @@ const updateIndexes = () => {
     }
 };
 const addMemberToEnd = (memberIndex) => {
+    console.log("memberIndex", memberIndex);
     editList.appendChild(document.querySelector(`.member-row-${memberIndex}`));
-    const selectedMember = memberBits[memberIndex];
+    console.log("1.", JSON.stringify(memberBits, null, 2));
+    let selectedMemberIndex = 0;
+    for (let i = 0; i < memberBits.length; i++) {
+        if (memberBits[i][0] === `${memberIndex + 1}-`) {
+            selectedMemberIndex = i;
+        }
+    }
+    const selectedMember = memberBits[selectedMemberIndex];
     console.log("::", JSON.stringify(selectedMember, null, 2));
-    memberBits.splice(memberIndex, 1);
+    memberBits.splice(selectedMemberIndex, 1);
     memberBits.push(selectedMember);
-    console.log(JSON.stringify(memberBits, null, 2));
+    console.log("2.", JSON.stringify(memberBits, null, 2));
     setTimeout(() => {
         updateIndexes();
     }, 100);
     rerenderAddMember();
 };
 const deleteMember = (memberIndex) => {
-    memberBits.splice(memberIndex, 1);
+    let selectedMemberIndex = 0;
+    for (let i = 0; i < memberBits.length; i++) {
+        if (memberBits[i][0] === `${memberIndex + 1}-`) {
+            selectedMemberIndex = i;
+        }
+    }
+    memberBits.splice(selectedMemberIndex, 1);
     document.querySelector(`.member-row-${memberIndex}`)?.remove();
     console.log(JSON.stringify(memberBits, null, 2));
     updateIndexes();
