@@ -1,0 +1,52 @@
+.page-header-section {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    height: 10vh;
+    text-shadow: 2.5px 0 rgba(98, 0, 255, 0.4), -2.5px 0 rgba(255, 0, 0, 0.4);
+}
+
+.page-main-section {
+    width: 100%;
+    height: 83vh;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    .section-header {
+        width: 100%;
+        background: rgb(15, 17, 18);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .arrow-indicator {
+        font-size: 100px;
+        font-family: monospace;
+        margin: 30px;
+    }
+}
+
+.page-footer-section {
+    height: 7vh;
+    font-size: 20px;
+    letter-spacing: 2px;
+    background: rgb(15, 17, 18);
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(237, 235, 232);
+    cursor: pointer;
+}

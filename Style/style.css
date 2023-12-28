@@ -1,22 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  cursor: default;
-}
-
-body {
-  background: rgb(27, 29, 31);
-  color: rgb(237, 235, 232);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
-  font-family: sans-serif;
-}
-
 ::-moz-selection {
   background-color: transparent;
 }
@@ -70,230 +51,6 @@ body {
   top: 0;
   left: 0;
 }
-.page-main-section .input-section,
-.page-main-section .output-section {
-  width: 300px;
-  border: 1px solid rgb(0, 0, 0);
-  border-radius: 10px;
-  overflow: hidden;
-  height: 80%;
-  position: relative;
-  padding-top: 30px;
-}
-.page-main-section .input-section .input-list,
-.page-main-section .input-section .output-list,
-.page-main-section .output-section .input-list,
-.page-main-section .output-section .output-list {
-  width: 100%;
-  height: 100%;
-  background: #3e404a;
-  border: none;
-  outline: none;
-  font-size: 18px;
-  padding: 5px;
-  resize: none;
-  color: white;
-  font-family: sans-serif;
-  direction: rtl;
-}
-.page-main-section .input-section .input-list::-moz-selection, .page-main-section .input-section .output-list::-moz-selection, .page-main-section .output-section .input-list::-moz-selection, .page-main-section .output-section .output-list::-moz-selection {
-  background-color: #1d16ae;
-  color: rgb(59, 255, 255);
-}
-.page-main-section .input-section .input-list::selection,
-.page-main-section .input-section .output-list::selection,
-.page-main-section .output-section .input-list::selection,
-.page-main-section .output-section .output-list::selection {
-  background-color: #1d16ae;
-  color: rgb(59, 255, 255);
-}
-.page-main-section .input-section:hover .input-btn-container,
-.page-main-section .output-section:hover .input-btn-container {
-  transition: opacity 0.25s;
-  opacity: 1;
-}
-.page-main-section .input-section .input-btn-container,
-.page-main-section .output-section .input-btn-container {
-  width: 100%;
-  height: 55px;
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  background: rgba(15, 17, 18, 0.8);
-  opacity: 0;
-  transition: opacity 1s 0.5s;
-}
-.page-main-section .input-section .input-btn-container .submit-input,
-.page-main-section .input-section .input-btn-container .copy-output,
-.page-main-section .output-section .input-btn-container .submit-input,
-.page-main-section .output-section .input-btn-container .copy-output {
-  width: 100px;
-  height: 30px;
-  border: none;
-  background: #222;
-  color: white;
-  border-radius: 5px;
-  border: 2px solid gray;
-  border-top: 1px solid gray;
-  border-bottom: 3px solid gray;
-  cursor: pointer;
-  transition: background-color 0.15s, border 0.1s;
-  letter-spacing: 0.8px;
-}
-.page-main-section .input-section .input-btn-container .submit-input:hover,
-.page-main-section .input-section .input-btn-container .copy-output:hover,
-.page-main-section .output-section .input-btn-container .submit-input:hover,
-.page-main-section .output-section .input-btn-container .copy-output:hover {
-  background: #1a1a1a;
-}
-.page-main-section .input-section .input-btn-container .submit-input:active,
-.page-main-section .input-section .input-btn-container .copy-output:active,
-.page-main-section .output-section .input-btn-container .submit-input:active,
-.page-main-section .output-section .input-btn-container .copy-output:active {
-  border-top: 2px solid gray;
-  border-bottom: 2px solid gray;
-}
-.page-main-section .edit-section {
-  width: 400px;
-  height: 80%;
-  border-radius: 10px;
-  overflow: hidden;
-  padding-top: 30px;
-  background: #3e404a;
-  position: relative;
-  direction: rtl;
-}
-.page-main-section .edit-section .edit-list-container {
-  min-height: 300px;
-  height: 100%;
-}
-.page-main-section .edit-section .edit-list-container .edit-list {
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  padding: 5px;
-  display: grid;
-  grid-template-rows: repeat(auto-fill, minmax(33px, 1fr));
-  gap: 5px;
-}
-.page-main-section .edit-section .edit-list-container .edit-list [class*=member-row] {
-  border: 1px solid rgb(61, 61, 255);
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  font-size: 18px;
-  height: 33px;
-  background: rgb(43, 43, 144);
-  border-radius: 5px;
-  padding-right: 10px;
-  overflow: hidden;
-}
-.page-main-section .edit-section .edit-list-container .edit-list [class*=member-row] .member-info {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 4px;
-  width: calc(100% - 70px);
-}
-.page-main-section .edit-section .edit-list-container .edit-list [class*=member-row] .member-info .member-name {
-  white-space: nowrap;
-}
-.page-main-section .edit-section .edit-list-container .edit-list [class*=member-row] .member-info .member-id {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.page-main-section .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-.page-main-section .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns .action-btn {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-.page-main-section .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=add-to-end] {
-  height: 33px;
-  width: 33px;
-  background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
-}
-.page-main-section .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=delete-member] {
-  height: 33px;
-  width: 33px;
-  background: url("../Assets/delete-icon.png") center/15px no-repeat, rgb(119, 55, 55);
-}
-.page-main-section .edit-section .edit-list-container .edit-list .add-member {
-  border: 1px solid rgb(42, 166, 61);
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  background: rgb(48, 121, 36);
-  width: 100%;
-  font-size: 14px;
-  height: 33px;
-  border-radius: 5px;
-  padding: 0 5px 0 10px;
-  overflow: hidden;
-}
-.page-main-section .edit-section .edit-list-container .edit-list .add-member .add-member-inputs {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  gap: 10px;
-}
-.page-main-section .edit-section .edit-list-container .edit-list .add-member .add-member-inputs input {
-  background: rgb(0, 68, 0);
-  border: 1px solid rgb(0, 150, 0);
-  outline: none;
-  width: 100%;
-  border-radius: 5px;
-  height: 24px;
-  padding: 3px 5px;
-  color: white;
-  cursor: auto;
-}
-.page-main-section .edit-section .edit-list-container .edit-list .add-member .add-member-inputs input::-moz-selection {
-  background-color: rgb(70, 187, 64);
-  color: rgb(0, 73, 0);
-}
-.page-main-section .edit-section .edit-list-container .edit-list .add-member .add-member-inputs input::selection {
-  background-color: rgb(70, 187, 64);
-  color: rgb(0, 73, 0);
-}
-.page-main-section .edit-section .edit-list-container .edit-list .add-member .add-member-btn {
-  border: 1px solid rgb(0, 60, 0);
-  padding: 3px 8px;
-  border-radius: 5px;
-  background: rgb(0, 92, 0);
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  letter-spacing: 0.8px;
-  margin-right: 10px;
-  transition: background-color 0.15s;
-  color: white;
-}
-.page-main-section .edit-section .edit-list-container .edit-list .add-member .add-member-btn:hover {
-  background-color: rgb(0, 82, 0);
-}
-.page-main-section .edit-section .edit-list-container .edit-list .add-member .add-member-btn:active {
-  background-color: rgb(0, 72, 0);
-}
 .page-main-section .arrow-indicator {
   font-size: 100px;
   font-family: monospace;
@@ -313,4 +70,249 @@ body {
   text-decoration: none;
   color: rgb(237, 235, 232);
   cursor: pointer;
+}
+
+.input-section,
+.output-section {
+  width: 300px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 80%;
+  position: relative;
+  padding-top: 30px;
+}
+.input-section .input-list,
+.input-section .output-list,
+.output-section .input-list,
+.output-section .output-list {
+  width: 100%;
+  height: 100%;
+  background: #3e404a;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 5px;
+  resize: none;
+  color: white;
+  font-family: sans-serif;
+  direction: rtl;
+}
+.input-section .input-list::-moz-selection, .input-section .output-list::-moz-selection, .output-section .input-list::-moz-selection, .output-section .output-list::-moz-selection {
+  background-color: #1d16ae;
+  color: rgb(59, 255, 255);
+}
+.input-section .input-list::selection,
+.input-section .output-list::selection,
+.output-section .input-list::selection,
+.output-section .output-list::selection {
+  background-color: #1d16ae;
+  color: rgb(59, 255, 255);
+}
+.input-section:hover .input-btn-container,
+.output-section:hover .input-btn-container {
+  transition: opacity 0.25s;
+  opacity: 1;
+}
+.input-section .input-btn-container,
+.output-section .input-btn-container {
+  width: 100%;
+  height: 55px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background: rgba(15, 17, 18, 0.8);
+  opacity: 0;
+  transition: opacity 1s 0.5s;
+}
+.input-section .input-btn-container .submit-input,
+.input-section .input-btn-container .copy-output,
+.output-section .input-btn-container .submit-input,
+.output-section .input-btn-container .copy-output {
+  width: 100px;
+  height: 30px;
+  border: none;
+  background: #222;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 3px solid gray;
+  cursor: pointer;
+  transition: background-color 0.15s, border 0.1s;
+  letter-spacing: 0.8px;
+}
+.input-section .input-btn-container .submit-input:hover,
+.input-section .input-btn-container .copy-output:hover,
+.output-section .input-btn-container .submit-input:hover,
+.output-section .input-btn-container .copy-output:hover {
+  background: #1a1a1a;
+}
+.input-section .input-btn-container .submit-input:active,
+.input-section .input-btn-container .copy-output:active,
+.output-section .input-btn-container .submit-input:active,
+.output-section .input-btn-container .copy-output:active {
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+}
+
+.edit-section {
+  width: 400px;
+  height: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+  padding-top: 30px;
+  background: #3e404a;
+  position: relative;
+  direction: rtl;
+}
+.edit-section .edit-list-container {
+  min-height: 300px;
+  height: 100%;
+}
+.edit-section .edit-list-container .edit-list {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 5px;
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(33px, 1fr));
+  gap: 5px;
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] {
+  border: 1px solid rgb(61, 61, 255);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 18px;
+  height: 33px;
+  background: rgb(43, 43, 144);
+  border-radius: 5px;
+  padding-right: 10px;
+  overflow: hidden;
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .member-info {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+  width: calc(100% - 70px);
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .member-info .member-name {
+  white-space: nowrap;
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .member-info .member-id {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns .action-btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=add-to-end] {
+  height: 33px;
+  width: 33px;
+  background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=delete-member] {
+  height: 33px;
+  width: 33px;
+  background: url("../Assets/delete-icon.png") center/15px no-repeat, rgb(119, 55, 55);
+}
+.edit-section .edit-list-container .edit-list .add-member {
+  border: 1px solid rgb(42, 166, 61);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(48, 121, 36);
+  width: 100%;
+  font-size: 14px;
+  height: 33px;
+  border-radius: 5px;
+  padding: 0 5px 0 10px;
+  overflow: hidden;
+}
+.edit-section .edit-list-container .edit-list .add-member .add-member-inputs {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  gap: 10px;
+}
+.edit-section .edit-list-container .edit-list .add-member .add-member-inputs input {
+  background: rgb(0, 68, 0);
+  border: 1px solid rgb(0, 150, 0);
+  outline: none;
+  width: 100%;
+  border-radius: 5px;
+  height: 24px;
+  padding: 3px 5px;
+  color: white;
+  cursor: auto;
+}
+.edit-section .edit-list-container .edit-list .add-member .add-member-inputs input::-moz-selection {
+  background-color: rgb(70, 187, 64);
+  color: rgb(0, 73, 0);
+}
+.edit-section .edit-list-container .edit-list .add-member .add-member-inputs input::selection {
+  background-color: rgb(70, 187, 64);
+  color: rgb(0, 73, 0);
+}
+.edit-section .edit-list-container .edit-list .add-member .add-member-btn {
+  border: 1px solid rgb(0, 60, 0);
+  padding: 3px 8px;
+  border-radius: 5px;
+  background: rgb(0, 92, 0);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  letter-spacing: 0.8px;
+  margin-right: 10px;
+  transition: background-color 0.15s;
+  color: white;
+}
+.edit-section .edit-list-container .edit-list .add-member .add-member-btn:hover {
+  background-color: rgb(0, 82, 0);
+}
+.edit-section .edit-list-container .edit-list .add-member .add-member-btn:active {
+  background-color: rgb(0, 72, 0);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  background: rgb(27, 29, 31);
+  color: rgb(237, 235, 232);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
 }/*# sourceMappingURL=style.css.map */
