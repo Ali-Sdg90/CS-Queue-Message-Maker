@@ -1,3 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  background: rgb(27, 29, 31);
+  color: rgb(237, 235, 232);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+}
+
 ::-moz-selection {
   background-color: transparent;
 }
@@ -224,16 +243,36 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: background-color 0.15s;
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=add-to-end] {
   height: 33px;
   width: 33px;
   background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
 }
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=add-to-end]:hover {
+  background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(128, 128, 60);
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=add-to-end]:active {
+  background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
+}
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=delete-member] {
   height: 33px;
   width: 33px;
   background: url("../Assets/delete-icon.png") center/15px no-repeat, rgb(119, 55, 55);
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=delete-member]:hover {
+  background: url("../Assets/delete-icon.png") center/15px no-repeat, rgb(129, 60, 60);
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=delete-member]:active {
+  background: url("../Assets/delete-icon.png") center/15px no-repeat, rgb(119, 55, 55);
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns .disable-btn {
+  cursor: default;
+  opacity: 0.75;
+}
+.edit-section .edit-list-container .edit-list [class*=member-row] .action-btns .disable-btn:hover {
+  background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
 }
 .edit-section .edit-list-container .edit-list .add-member {
   border: 1px solid rgb(42, 166, 61);
@@ -298,21 +337,19 @@
   background-color: rgb(0, 72, 0);
 }
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  cursor: default;
+.how-to-use-container {
+  direction: ltr;
+  padding: 4px;
 }
-
-body {
-  background: rgb(27, 29, 31);
-  color: rgb(237, 235, 232);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  align-items: center;
-  font-family: sans-serif;
+.how-to-use-container .how-to-use-text {
+  text-align: justify;
+  line-height: 20px;
+}
+.how-to-use-container .how-to-use-or {
+  text-align: center;
+  font-size: 30px;
+  line-height: 20px;
+}
+.how-to-use-container .how-to-use-btn {
+  border: 1px solid red;
 }/*# sourceMappingURL=style.css.map */

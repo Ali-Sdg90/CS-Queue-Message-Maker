@@ -8,9 +8,8 @@ let membersArray = [];
 let memberBits = [];
 let course = "";
 submitInput.addEventListener("click", () => {
-    console.log("submit");
     convertInputToEditableList();
-    updateOutput();
+    updateIndexes();
 });
 const rerenderAddMember = () => {
     document.querySelector(".add-member")?.remove();
@@ -18,11 +17,17 @@ const rerenderAddMember = () => {
 };
 const updateIndexes = () => {
     const indexElements = document.querySelectorAll(".member-index");
+    const actionBtns = document.querySelectorAll(".action-btn");
     for (let i = 0; i < memberBits.length; i++) {
         if (indexElements[i]) {
             indexElements[i].textContent = (i + 1).toString();
         }
     }
+    Array.from(actionBtns).map((actionBtn) => {
+        actionBtn.classList.remove("disable-btn");
+    });
+    const lastDownBtn = actionBtns[actionBtns.length - 2];
+    lastDownBtn.classList.add("disable-btn");
     updateOutput();
 };
 const nameFinder = (memberBit) => {

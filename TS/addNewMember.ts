@@ -29,7 +29,6 @@ const addNewMemberForm = () => {
         "submit",
         (event) => {
             event.preventDefault();
-            console.log(event);
         }
     );
 
@@ -45,8 +44,6 @@ const addNewMemberForm = () => {
             ).value;
 
             if (memberName && memberID) {
-                console.log("HI", memberName, memberID);
-
                 const newMemberIndex = memberBits.length;
 
                 const newMemberHTML = `
@@ -73,7 +70,7 @@ const addNewMemberForm = () => {
                         `.add-to-end-${newMemberIndex}`
                     ) as HTMLElement
                 ).addEventListener("click", () => {
-                    console.log("CLICK");
+                    console.log("CLICK on add to end");
 
                     addMemberToEnd(newMemberIndex);
                 });
@@ -95,7 +92,7 @@ const addNewMemberForm = () => {
                 rerenderAddMember();
                 updateIndexes();
 
-                console.log(JSON.stringify(memberBits, null, 2));
+                // console.log(JSON.stringify(memberBits, null, 2));
             }
         }
     );

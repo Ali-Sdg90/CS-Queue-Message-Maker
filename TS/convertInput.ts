@@ -1,16 +1,12 @@
 const convertInputToEditableList = () => {
     inputArray = input.value.split("\n");
 
-    // console.log(inputArray);
-
     course = inputArray[inputArray.length - 1];
 
     membersArray = [];
     for (let i = 2; i < inputArray.length - 2; i++) {
         membersArray.push(inputArray[i]);
     }
-
-    // console.log(membersArray);
 
     memberBits = membersArray.map((memberArray) => {
         return memberArray.split(" ");

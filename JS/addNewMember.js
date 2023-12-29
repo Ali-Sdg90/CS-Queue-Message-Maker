@@ -26,13 +26,11 @@ const addNewMemberForm = () => {
     editList.appendChild(tempDiv);
     document.querySelector(".add-member").addEventListener("submit", (event) => {
         event.preventDefault();
-        console.log(event);
     });
     document.querySelector(".add-member-btn").addEventListener("click", () => {
         const memberName = document.querySelector(".member-name-input").value;
         const memberID = document.querySelector(".member-id-input").value;
         if (memberName && memberID) {
-            console.log("HI", memberName, memberID);
             const newMemberIndex = memberBits.length;
             const newMemberHTML = `
                     <div class="member-info">
@@ -52,7 +50,7 @@ const addNewMemberForm = () => {
             tempDiv.innerHTML = newMemberHTML;
             editList.appendChild(tempDiv);
             document.querySelector(`.add-to-end-${newMemberIndex}`).addEventListener("click", () => {
-                console.log("CLICK");
+                console.log("CLICK on add to end");
                 addMemberToEnd(newMemberIndex);
             });
             document.querySelector(`.delete-member-${newMemberIndex}`).addEventListener("click", () => {
@@ -65,7 +63,6 @@ const addNewMemberForm = () => {
             ]);
             rerenderAddMember();
             updateIndexes();
-            console.log(JSON.stringify(memberBits, null, 2));
         }
     });
 };

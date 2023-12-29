@@ -1,23 +1,6 @@
+@import "colors";
 @import "config";
 @import "base-sections";
 @import "input-output-sections";
 @import "edit-section";
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    cursor: default;
-}
-
-body {
-    background: rgb(27, 29, 31);
-    color: rgb(237, 235, 232);
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    align-items: center;
-    font-family: sans-serif;
-}
+@import "how-to-use";

@@ -1,31 +1,34 @@
 const addMemberToEnd = (memberIndex: number): void => {
-    console.log("memberIndex", memberIndex);
-
-    editList.appendChild(
-        document.querySelector(`.member-row-${memberIndex}`) as HTMLElement
-    );
-
-    console.log("1.", JSON.stringify(memberBits, null, 2));
-
     let selectedMemberIndex = 0;
     for (let i = 0; i < memberBits.length; i++) {
         if (memberBits[i][0] === `${memberIndex + 1}-`) {
             selectedMemberIndex = i;
         }
     }
-    const selectedMember = memberBits[selectedMemberIndex];
-    console.log("::", JSON.stringify(selectedMember, null, 2));
 
-    memberBits.splice(selectedMemberIndex, 1);
-    memberBits.push(selectedMember);
+    if (selectedMemberIndex + 1 != memberBits.length) {
+        // console.log("memberIndex", memberIndex);
 
-    console.log("2.", JSON.stringify(memberBits, null, 2));
+        editList.appendChild(
+            document.querySelector(`.member-row-${memberIndex}`) as HTMLElement
+        );
 
-    setTimeout(() => {
-        updateIndexes();
-    }, 100);
+        // console.log("1.", JSON.stringify(memberBits, null, 2));
 
-    rerenderAddMember();
+        const selectedMember = memberBits[selectedMemberIndex];
+        console.log("::", JSON.stringify(selectedMember, null, 2));
+
+        memberBits.splice(selectedMemberIndex, 1);
+        memberBits.push(selectedMember);
+
+        // console.log("2.", JSON.stringify(memberBits, null, 2));
+
+        setTimeout(() => {
+            updateIndexes();
+        }, 100);
+
+        rerenderAddMember();
+    }
 };
 
 const deleteMember = (memberIndex: number): void => {
@@ -39,7 +42,7 @@ const deleteMember = (memberIndex: number): void => {
     memberBits.splice(selectedMemberIndex, 1);
     document.querySelector(`.member-row-${memberIndex}`)?.remove();
 
-    console.log(JSON.stringify(memberBits, null, 2));
+    // console.log(JSON.stringify(memberBits, null, 2));
 
     updateIndexes();
 };

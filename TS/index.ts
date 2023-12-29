@@ -9,9 +9,8 @@ let memberBits: string[][] = [];
 let course = "";
 
 submitInput.addEventListener("click", () => {
-    console.log("submit");
     convertInputToEditableList();
-    updateOutput();
+    updateIndexes();
 });
 
 const rerenderAddMember = () => {
@@ -21,13 +20,22 @@ const rerenderAddMember = () => {
 
 const updateIndexes = (): void => {
     const indexElements = document.querySelectorAll(".member-index");
+    const actionBtns = document.querySelectorAll(
+        ".action-btn"
+    ) as NodeListOf<HTMLElement>;
 
     for (let i = 0; i < memberBits.length; i++) {
         if (indexElements[i]) {
             indexElements[i].textContent = (i + 1).toString();
-            // memberBits
         }
     }
+
+    Array.from(actionBtns).map((actionBtn) => {
+        actionBtn.classList.remove("disable-btn");
+    });
+
+    const lastDownBtn = actionBtns[actionBtns.length - 2] as HTMLElement;
+    lastDownBtn.classList.add("disable-btn");
 
     updateOutput();
 };
@@ -55,4 +63,3 @@ const IDFinder = (memberBit: string[]): string | void => {
         }
     }
 };
-

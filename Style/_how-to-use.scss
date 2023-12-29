@@ -1,0 +1,19 @@
+.how-to-use-container {
+    direction: ltr;
+    padding: 4px;
+
+    .how-to-use-text {
+        text-align: justify;
+        line-height: 20px;
+    }
+
+    .how-to-use-or{
+        text-align: center;
+        font-size: 30px;
+        line-height: 20px;
+    }
+
+    .how-to-use-btn{
+        border: 1px solid red;
+    }
+}
