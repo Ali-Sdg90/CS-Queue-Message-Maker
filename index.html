@@ -7,26 +7,27 @@
         <title>CS-Queue-Message-Maker</title>
     </head>
     <body>
-        <h1 class="page-header-section">- CS Queue Message Maker -</h1>
+        <div class="custom-scale-div default-properties">
+            <h1 class="page-header-section">- CS Queue Message Maker -</h1>
 
-        <main class="page-main-section">
-            <div class="input-section">
-                <div class="section-header">Input</div>
-                <textarea class="input-list" cols="30" rows="10"></textarea>
+            <main class="page-main-section">
+                <div class="input-section">
+                    <div class="section-header">Input</div>
+                    <textarea class="input-list" cols="30" rows="10"></textarea>
 
-                <div class="input-btn-container">
-                    <button class="submit-input">Submit</button>
+                    <div class="input-btn-container">
+                        <button class="submit-input">Submit</button>
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-to-edit-arrow arrow-indicator">></div>
+                <div class="input-to-edit-arrow arrow-indicator">></div>
 
-            <div class="edit-section">
-                <div class="section-header">Edit List</div>
+                <div class="edit-section">
+                    <div class="section-header">Edit List</div>
 
-                <div class="edit-list-container">
-                    <div class="edit-list">
-                        <!-- Member Structure 1
+                    <div class="edit-list-container">
+                        <div class="edit-list">
+                            <!-- Member Structure 1
                         <div class="member-row">
                             <div class="member-info">
                                 <div class="member-index">1</div>
@@ -41,7 +42,7 @@
                             </div>
                         </div> -->
 
-                        <!-- Member Structure 2
+                            <!-- Member Structure 2
                         <div class="member-row">
                             <div class="member-info">
                                 <div class="member-index">2</div>
@@ -58,7 +59,7 @@
                             </div>
                         </div> -->
 
-                        <!-- Add Member Structure
+                            <!-- Add Member Structure
                         <form class="add-member">
                             <div class="add-member-inputs">
                                 <input
@@ -80,55 +81,57 @@
                             <button class="add-member-btn">Add</button>
                         </form> -->
 
-                        <div class="how-to-use-container">
-                            <h3 class="how-to-use-title">How to use:</h3>
-                            <div class="how-to-use-text">
-                                Copy the list you want to modify from the "CS
-                                Internship - Queue" group and paste it into the
-                                Input section. Click on Submit button, and in
-                                the Edit List section, make the desired changes
-                                to the list. You can move someone to the end of
-                                the list, remove them, or add a new member. Once
-                                you've made the desired changes, click the copy
-                                button in the Output section, and the updated
-                                list will be copied for you.
+                            <div class="how-to-use-container">
+                                <h3 class="how-to-use-title">How to use:</h3>
+                                <div class="how-to-use-text">
+                                    Copy the list you want to modify from the
+                                    "CS Internship - Queue" group and paste it
+                                    into the Input section. Click on Submit
+                                    button, and in the Edit List section, make
+                                    the desired changes to the list. You can
+                                    move someone to the end of the list, remove
+                                    them, or add a new member. Once you've made
+                                    the desired changes, click the copy button
+                                    in the Output section, and the updated list
+                                    will be copied for you.
+                                </div>
+                                <div class="how-to-use-btn">Add Demo List</div>
+                                <br />
                             </div>
-                            <div class="how-to-use-btn">Add Demo List</div>
-                            <br />
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="edit-to-output-arrow arrow-indicator">></div>
+                <div class="edit-to-output-arrow arrow-indicator">></div>
 
-            <div class="output-section">
-                <div class="section-header">Output</div>
-                <textarea
-                    class="output-list"
-                    cols="30"
-                    rows="10"
-                    disabled
-                ></textarea>
+                <div class="output-section">
+                    <div class="section-header">Output</div>
+                    <textarea
+                        class="output-list"
+                        cols="30"
+                        rows="10"
+                        disabled
+                    ></textarea>
 
-                <div class="input-btn-container">
-                    <button class="copy-output">Copy</button>
+                    <div class="input-btn-container">
+                        <button class="copy-output">Copy</button>
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
 
-        <a
-            href="https://github.com/Ali-Sdg90/CS-Queue-Message-Maker"
-            class="page-footer-section"
-            target="_blank"
-            >∙ GitHub Repository ∙</a
-        >
-
+            <a
+                href="https://github.com/Ali-Sdg90/CS-Queue-Message-Maker"
+                class="page-footer-section"
+                target="_blank"
+                >∙ GitHub Repository ∙</a
+            >
+        </div>
         <script type="module">
             import autoAnimate from "https://cdn.jsdelivr.net/npm/@formkit/auto-animate";
             autoAnimate(document.querySelector(".edit-list"));
         </script>
 
+        <script src="./JS/customScaleCalc.js"></script>
         <script src="./JS/index.js"></script>
         <script src="./JS/addNewMember.js"></script>
         <script src="./JS/convertInput.js"></script>

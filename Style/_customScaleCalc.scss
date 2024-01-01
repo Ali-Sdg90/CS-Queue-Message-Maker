@@ -1,0 +1,12 @@
+.default-properties {
+    width: 100%;
+    background-color: rgb(27, 29, 31);
+    box-shadow: 0 0 10px 10px rgba(13, 13, 13, 0.732);
+}
+
+.custom-scale-calc {
+    // transform: scale(0.5) rotate(90deg) translate(-50%, -53%);
+    width: 140vh;
+    overflow: hidden;
+    position: absolute;
+}

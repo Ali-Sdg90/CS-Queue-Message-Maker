@@ -20,6 +20,7 @@
             display: grid;
             grid-template-rows: repeat(auto-fill, minmax(33px, 1fr));
             gap: 5px;
+            overflow-x: hidden;
 
             [class*="member-row"] {
                 border: 1px solid $blue-border;
