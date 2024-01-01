@@ -3,6 +3,7 @@ const input = document.querySelector(".input-list");
 const submitInput = document.querySelector(".submit-input");
 const editList = document.querySelector(".edit-list");
 const output = document.querySelector(".output-list");
+const demoListBtn = document.querySelector(".how-to-use-btn");
 let inputArray = [];
 let membersArray = [];
 let memberBits = [];
@@ -51,4 +52,7 @@ const IDFinder = (memberBit) => {
         }
     }
 };
+demoListBtn.addEventListener("click", () => {
+    addDemoList();
+});
 //# sourceMappingURL=index.js.map

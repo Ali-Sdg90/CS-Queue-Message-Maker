@@ -344,12 +344,30 @@ body {
 .how-to-use-container .how-to-use-text {
   text-align: justify;
   line-height: 20px;
-}
-.how-to-use-container .how-to-use-or {
-  text-align: center;
-  font-size: 30px;
-  line-height: 20px;
+  margin-top: 10px;
 }
 .how-to-use-container .how-to-use-btn {
   border: 1px solid red;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgb(43, 43, 144);
+  border: 1px solid rgb(61, 61, 255);
+  width: 100%;
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.3);
+}
+.how-to-use-container .how-to-use-btn:hover {
+  background: rgb(46, 46, 155);
+}
+.how-to-use-container .how-to-use-btn:active {
+  background: rgb(43, 43, 144);
+  box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.3);
+  transform: translateY(1px);
 }/*# sourceMappingURL=style.css.map */

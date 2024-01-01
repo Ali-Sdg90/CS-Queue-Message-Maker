@@ -2,6 +2,7 @@ const input = document.querySelector(".input-list") as HTMLInputElement;
 const submitInput = document.querySelector(".submit-input") as HTMLElement;
 const editList = document.querySelector(".edit-list") as HTMLElement;
 const output = document.querySelector(".output-list") as HTMLInputElement;
+const demoListBtn = document.querySelector(".how-to-use-btn") as HTMLElement;
 
 let inputArray: string[] = [];
 let membersArray: string[] = [];
@@ -63,3 +64,7 @@ const IDFinder = (memberBit: string[]): string | void => {
         }
     }
 };
+
+demoListBtn.addEventListener("click", () => {
+    addDemoList();
+});
