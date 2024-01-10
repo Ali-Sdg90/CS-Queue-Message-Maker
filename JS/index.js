@@ -55,4 +55,17 @@ const IDFinder = (memberBit) => {
 demoListBtn.addEventListener("click", () => {
     addDemoList();
 });
+const ICARUSs = document.querySelectorAll(".ICARUS");
+ICARUSs.forEach((ICARUS) => {
+    ICARUS.addEventListener("click", () => {
+        if (ICARUS.classList.contains("ICARUS")) {
+            console.log("Aloha!");
+            ICARUS.setAttribute("href", "../Assets/ICARUS.mp3");
+            ICARUS.classList.remove("ICARUS");
+            setTimeout(() => {
+                ICARUS.removeAttribute("href");
+            }, 0);
+        }
+    });
+});
 //# sourceMappingURL=index.js.map

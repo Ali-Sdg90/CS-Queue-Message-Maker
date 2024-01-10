@@ -68,3 +68,20 @@ const IDFinder = (memberBit: string[]): string | void => {
 demoListBtn.addEventListener("click", () => {
     addDemoList();
 });
+
+const ICARUSs = document.querySelectorAll(".ICARUS") as NodeListOf<HTMLElement>;
+
+ICARUSs.forEach((ICARUS) => {
+    ICARUS.addEventListener("click", () => {
+        if (ICARUS.classList.contains("ICARUS")) {
+            console.log("Aloha!");
+
+            ICARUS.setAttribute("href", "../Assets/ICARUS.mp3");
+            ICARUS.classList.remove("ICARUS");
+
+            setTimeout(() => {
+                ICARUS.removeAttribute("href");
+            }, 0);
+        }
+    });
+});

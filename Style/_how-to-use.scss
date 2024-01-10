@@ -36,3 +36,19 @@
         }
     }
 }
+
+.header-EE {
+    margin: 0 5px 0 5px;
+    cursor: default;
+    text-decoration: none;
+    color: white;
+}
+
+.ICARUS {
+    cursor: pointer;
+    transition: color 0.15s;
+
+    &:hover {
+        color: rgb(131, 135, 255);
+    }
+}

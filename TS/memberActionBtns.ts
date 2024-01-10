@@ -7,7 +7,6 @@ const addMemberToEnd = (memberIndex: number): void => {
     }
 
     if (selectedMemberIndex + 1 != memberBits.length) {
-        // console.log("memberIndex", memberIndex);
 
         editList.appendChild(
             document.querySelector(`.member-row-${memberIndex}`) as HTMLElement
@@ -16,7 +15,7 @@ const addMemberToEnd = (memberIndex: number): void => {
         // console.log("1.", JSON.stringify(memberBits, null, 2));
 
         const selectedMember = memberBits[selectedMemberIndex];
-        console.log("::", JSON.stringify(selectedMember, null, 2));
+        // console.log("=>", JSON.stringify(selectedMember, null, 2));
 
         memberBits.splice(selectedMemberIndex, 1);
         memberBits.push(selectedMember);
@@ -41,8 +40,6 @@ const deleteMember = (memberIndex: number): void => {
 
     memberBits.splice(selectedMemberIndex, 1);
     document.querySelector(`.member-row-${memberIndex}`)?.remove();
-
-    // console.log(JSON.stringify(memberBits, null, 2));
 
     updateIndexes();
 };

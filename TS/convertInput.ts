@@ -38,8 +38,6 @@ const convertInputToEditableList = () => {
         (
             document.querySelector(`.add-to-end-${i}`) as HTMLElement
         ).addEventListener("click", () => {
-            console.log(`Move ${i} to End`);
-
             addMemberToEnd(i);
         });
 

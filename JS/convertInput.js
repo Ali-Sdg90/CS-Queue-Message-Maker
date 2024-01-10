@@ -30,7 +30,6 @@ const convertInputToEditableList = () => {
     }
     for (let i = 0; i < memberBits.length; i++) {
         document.querySelector(`.add-to-end-${i}`).addEventListener("click", () => {
-            console.log(`Move ${i} to End`);
             addMemberToEnd(i);
         });
         document.querySelector(`.delete-member-${i}`).addEventListener("click", () => {

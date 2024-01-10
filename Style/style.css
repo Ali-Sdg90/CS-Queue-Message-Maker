@@ -384,4 +384,19 @@ body {
   background: rgb(43, 43, 144);
   box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.3);
   transform: translateY(1px);
+}
+
+.header-EE {
+  margin: 0 5px 0 5px;
+  cursor: default;
+  text-decoration: none;
+  color: white;
+}
+
+.ICARUS {
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.ICARUS:hover {
+  color: rgb(131, 135, 255);
 }/*# sourceMappingURL=style.css.map */

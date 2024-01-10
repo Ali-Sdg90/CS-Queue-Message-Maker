@@ -9,7 +9,6 @@ const addMemberToEnd = (memberIndex) => {
     if (selectedMemberIndex + 1 != memberBits.length) {
         editList.appendChild(document.querySelector(`.member-row-${memberIndex}`));
         const selectedMember = memberBits[selectedMemberIndex];
-        console.log("::", JSON.stringify(selectedMember, null, 2));
         memberBits.splice(selectedMemberIndex, 1);
         memberBits.push(selectedMember);
         setTimeout(() => {
