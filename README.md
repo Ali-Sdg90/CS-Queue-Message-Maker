@@ -1,15 +1,17 @@
 <h1>CS-Queue-Message-Maker📋</h1>
 <p>
-    Hello! A year ago, I was in the queue for a
-    web development course for #CS_Internship program, observing the group
-    admins sending updates to the queue every week. I always thought there must
-    be a professional tool to organize and arrange the queue efficiently. I
-    joined the mentors' group, and now I was the admin sending queue updates. It
-    seemed strange to me that this process was entirely manual, with no tool
-    available for it. I realized that if I were asked to move someone from the
-    front to the end of the queue, I would need to manually adjust the numbers
-    of everyone behind them, ensuring no mistakes are made, and the spacing is
-    consistent.
+    Hello! A year ago, I was in the queue for a web development course for
+    <a href="https://github.com/cs-internship" target="_blank"
+        >CS-Internship</a
+    >
+    program, observing the group admins sending updates to the queue every week.
+    I always thought there must be a professional tool to organize and arrange
+    the queue efficiently. I joined the mentors' group, and now I was the admin
+    sending queue updates. It seemed strange to me that this process was
+    entirely manual, with no tool available for it. I realized that if I were
+    asked to move someone from the front to the end of the queue, I would need
+    to manually adjust the numbers of everyone behind them, ensuring no mistakes
+    are made, and the spacing is consistent.
 </p>
 <p>
     A few weeks ago, I dedicated time to developing a solution for this issue,
@@ -18,11 +20,7 @@
     updates. The program has a simple interface, and you can easily understand
     how to use it by reading the included "How to use" guide within the program.
 </p>
-<img
-    src="./Assets/README-GIF.gif"
-    alt="how-to-use-gif"
-    style="width: 100%"
-/>
+<img src="./Assets/README-GIF.gif" alt="how-to-use-gif" style="width: 100%" />
 <h2>How to Use CS-Queue-Message-Maker:</h2>
 <ol>
     <li>

@@ -361,7 +361,6 @@ body {
   margin-top: 10px;
 }
 .how-to-use-container .how-to-use-btn {
-  border: 1px solid red;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
