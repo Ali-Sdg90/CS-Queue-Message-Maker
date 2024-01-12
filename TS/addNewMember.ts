@@ -91,8 +91,6 @@ const addNewMemberForm = () => {
 
                 rerenderAddMember();
                 updateIndexes();
-
-                // console.log(JSON.stringify(memberBits, null, 2));
             }
         }
     );

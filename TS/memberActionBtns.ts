@@ -7,20 +7,14 @@ const addMemberToEnd = (memberIndex: number): void => {
     }
 
     if (selectedMemberIndex + 1 != memberBits.length) {
-
         editList.appendChild(
             document.querySelector(`.member-row-${memberIndex}`) as HTMLElement
         );
 
-        // console.log("1.", JSON.stringify(memberBits, null, 2));
-
         const selectedMember = memberBits[selectedMemberIndex];
-        // console.log("=>", JSON.stringify(selectedMember, null, 2));
 
         memberBits.splice(selectedMemberIndex, 1);
         memberBits.push(selectedMember);
-
-        // console.log("2.", JSON.stringify(memberBits, null, 2));
 
         setTimeout(() => {
             updateIndexes();

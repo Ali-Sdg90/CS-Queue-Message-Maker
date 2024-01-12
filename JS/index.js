@@ -60,7 +60,7 @@ ICARUSs.forEach((ICARUS) => {
     ICARUS.addEventListener("click", () => {
         if (ICARUS.classList.contains("ICARUS")) {
             console.log("Aloha!");
-            ICARUS.setAttribute("href", "../Assets/ICARUS.mp3");
+            ICARUS.setAttribute("href", "./Assets/ICARUS.mp3");
             ICARUS.classList.remove("ICARUS");
             setTimeout(() => {
                 ICARUS.removeAttribute("href");
