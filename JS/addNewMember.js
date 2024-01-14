@@ -50,7 +50,6 @@ const addNewMemberForm = () => {
             tempDiv.innerHTML = newMemberHTML;
             editList.appendChild(tempDiv);
             document.querySelector(`.add-to-end-${newMemberIndex}`).addEventListener("click", () => {
-                console.log("CLICK on add to end");
                 addMemberToEnd(newMemberIndex);
             });
             document.querySelector(`.delete-member-${newMemberIndex}`).addEventListener("click", () => {

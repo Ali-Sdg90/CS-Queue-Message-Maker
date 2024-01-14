@@ -1,11 +1,15 @@
 "use strict";
-const addMemberToEnd = (memberIndex) => {
-    let selectedMemberIndex = 0;
+const findMemberIndex = (memberIndex) => {
+    let index = 0;
     for (let i = 0; i < memberBits.length; i++) {
         if (memberBits[i][0] === `${memberIndex + 1}-`) {
-            selectedMemberIndex = i;
+            index = i;
         }
     }
+    return index;
+};
+const addMemberToEnd = (memberIndex) => {
+    let selectedMemberIndex = findMemberIndex(memberIndex);
     if (selectedMemberIndex + 1 != memberBits.length) {
         editList.appendChild(document.querySelector(`.member-row-${memberIndex}`));
         const selectedMember = memberBits[selectedMemberIndex];
@@ -18,12 +22,7 @@ const addMemberToEnd = (memberIndex) => {
     }
 };
 const deleteMember = (memberIndex) => {
-    let selectedMemberIndex = 0;
-    for (let i = 0; i < memberBits.length; i++) {
-        if (memberBits[i][0] === `${memberIndex + 1}-`) {
-            selectedMemberIndex = i;
-        }
-    }
+    let selectedMemberIndex = findMemberIndex(memberIndex);
     memberBits.splice(selectedMemberIndex, 1);
     document.querySelector(`.member-row-${memberIndex}`)?.remove();
     updateIndexes();

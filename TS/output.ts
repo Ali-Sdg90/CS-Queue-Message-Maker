@@ -21,6 +21,7 @@ const copyBtn = document.querySelector(".copy-output") as HTMLElement;
 
 copyBtn.addEventListener("click", () => {
     if (output.textContent) {
+        // Copy function
         navigator.clipboard.writeText(output.textContent).then(() => {
             console.log(`Copied to clipboard`);
             copyBtn.textContent = "Copied";

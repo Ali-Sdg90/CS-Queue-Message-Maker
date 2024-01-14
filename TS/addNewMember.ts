@@ -32,6 +32,7 @@ const addNewMemberForm = () => {
         }
     );
 
+    // Add new member to Edit-list
     (document.querySelector(".add-member-btn") as HTMLElement).addEventListener(
         "click",
         () => {
@@ -65,13 +66,12 @@ const addNewMemberForm = () => {
                 tempDiv.innerHTML = newMemberHTML;
                 editList.appendChild(tempDiv);
 
+                // New member btn addEventListeners
                 (
                     document.querySelector(
                         `.add-to-end-${newMemberIndex}`
                     ) as HTMLElement
                 ).addEventListener("click", () => {
-                    console.log("CLICK on add to end");
-
                     addMemberToEnd(newMemberIndex);
                 });
 

@@ -41,6 +41,7 @@ const updateIndexes = (): void => {
     updateOutput();
 };
 
+// Find memberBits between member index and Tel ID
 const nameFinder = (memberBit: string[]): string => {
     let memberName = "";
 
@@ -69,6 +70,7 @@ demoListBtn.addEventListener("click", () => {
     addDemoList();
 });
 
+// ICARUS Easter Egg :)
 const ICARUSs = document.querySelectorAll(".ICARUS") as NodeListOf<HTMLElement>;
 
 ICARUSs.forEach((ICARUS) => {

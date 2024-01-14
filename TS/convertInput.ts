@@ -4,16 +4,20 @@ const convertInputToEditableList = () => {
     course = inputArray[inputArray.length - 1];
 
     membersArray = [];
+
+    // Store elements from line 2 to length - 2 in membersArray
     for (let i = 2; i < inputArray.length - 2; i++) {
         membersArray.push(inputArray[i]);
     }
 
+    // Create an array of objects where each array is for a member and inside it is member's info
     memberBits = membersArray.map((memberArray) => {
         return memberArray.split(" ");
     });
 
     console.log(JSON.stringify(memberBits, null, 2));
 
+    // Clear How-to or old queue-list
     editList.innerHTML = "";
 
     for (let i = 0; i < memberBits.length; i++) {
@@ -34,6 +38,7 @@ const convertInputToEditableList = () => {
         `;
     }
 
+    // Add eventListener to each btn
     for (let i = 0; i < memberBits.length; i++) {
         (
             document.querySelector(`.add-to-end-${i}`) as HTMLElement
