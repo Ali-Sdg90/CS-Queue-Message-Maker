@@ -11,6 +11,11 @@ const updateOutput = () => {
     }
     outputText += `\n${course}`;
     output.textContent = outputText;
+    const addMembers = document.querySelectorAll(".add-member");
+    if (addMembers.length > 2) {
+        console.log("REMOVE");
+        addMembers[addMembers.length - 2].remove();
+    }
 };
 const copyBtn = document.querySelector(".copy-output");
 copyBtn.addEventListener("click", () => {

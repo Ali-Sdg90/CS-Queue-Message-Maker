@@ -15,6 +15,15 @@ const updateOutput = () => {
     outputText += `\n${course}`;
 
     output.textContent = outputText;
+
+    const addMembers = document.querySelectorAll(".add-member");
+
+    // console.log(addMembers, addMembers.length);
+    if (addMembers.length > 2) {
+        console.log("REMOVE");
+
+        addMembers[addMembers.length - 2].remove();
+    }
 };
 
 const copyBtn = document.querySelector(".copy-output") as HTMLElement;
