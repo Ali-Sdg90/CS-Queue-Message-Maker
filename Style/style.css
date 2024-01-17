@@ -52,6 +52,23 @@ body {
   position: absolute;
 }
 
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 .page-header-section {
   width: 100%;
   display: flex;
@@ -102,6 +119,10 @@ body {
   text-decoration: none;
   color: rgb(237, 235, 232);
   cursor: pointer;
+}
+
+.shake-animation {
+  animation: shake 0.3s;
 }
 
 .input-section,

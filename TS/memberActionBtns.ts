@@ -12,7 +12,7 @@ const findMemberIndex = (memberIndex: number): number => {
 const addMemberToEnd = (memberIndex: number): void => {
     let selectedMemberIndex = findMemberIndex(memberIndex);
 
-    console.log(memberIndex, selectedMemberIndex);
+    // console.log(memberIndex, selectedMemberIndex);
 
     if (selectedMemberIndex + 1 != memberBits.length) {
         editList.appendChild(

@@ -23,5 +23,11 @@ copyBtn.addEventListener("click", () => {
             }, 1000);
         });
     }
+    else {
+        copyBtn.classList.add("shake-animation");
+        setTimeout(() => {
+            copyBtn.classList.remove("shake-animation");
+        }, 300);
+    }
 });
 //# sourceMappingURL=output.js.map

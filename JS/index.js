@@ -7,12 +7,20 @@ const demoListBtn = document.querySelector(".how-to-use-btn");
 let inputArray = [];
 let membersArray = [];
 let memberBits = [];
-let course = "";
 let memberCounter = 0;
+let course = "";
 submitInput.addEventListener("click", () => {
-    memberCounter = 0;
-    convertInputToEditableList();
-    updateIndexes();
+    if (input.value) {
+        memberCounter = 0;
+        convertInputToEditableList();
+        updateIndexes();
+    }
+    else {
+        submitInput.classList.add("shake-animation");
+        setTimeout(() => {
+            submitInput.classList.remove("shake-animation");
+        }, 300);
+    }
 });
 const rerenderAddMember = () => {
     document.querySelector(".add-member")?.remove();
@@ -30,7 +38,9 @@ const updateIndexes = () => {
         actionBtn.classList.remove("disable-btn");
     });
     const lastDownBtn = actionBtns[actionBtns.length - 2];
-    lastDownBtn.classList.add("disable-btn");
+    if (lastDownBtn) {
+        lastDownBtn.classList.add("disable-btn");
+    }
     updateOutput();
 };
 const nameFinder = (memberBit) => {

@@ -29,5 +29,11 @@ copyBtn.addEventListener("click", () => {
                 copyBtn.textContent = "Copy";
             }, 1000);
         });
+    } else {
+        copyBtn.classList.add("shake-animation");
+
+        setTimeout(() => {
+            copyBtn.classList.remove("shake-animation");
+        }, 300);
     }
 });
