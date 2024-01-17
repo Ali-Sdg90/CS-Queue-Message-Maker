@@ -36,6 +36,8 @@ const convertInputToEditableList = () => {
                 </div>
             </div>
         `;
+
+        memberCounter++;
     }
 
     // Add eventListener to each btn

@@ -8,7 +8,9 @@ let inputArray = [];
 let membersArray = [];
 let memberBits = [];
 let course = "";
+let memberCounter = 0;
 submitInput.addEventListener("click", () => {
+    memberCounter = 0;
     convertInputToEditableList();
     updateIndexes();
 });

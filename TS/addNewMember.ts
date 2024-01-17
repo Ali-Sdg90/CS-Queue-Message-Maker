@@ -45,50 +45,47 @@ const addNewMemberForm = () => {
             ).value;
 
             if (memberName && memberID) {
-                const newMemberIndex = memberBits.length;
-
                 const newMemberHTML = `
                     <div class="member-info">
-                        <div class="member-index">${newMemberIndex + 1}</div>
+                        <div class="member-index">${memberBits.length + 1}</div>
                         <div>-</div>
                         <div class="member-name">${memberName}</div>
                         <div class="member-id">${memberID}</div>
                     </div>
                 
                     <div class="action-btns">
-                        <div class="action-btn add-to-end-${newMemberIndex}"></div>
-                        <div class="action-btn delete-member-${newMemberIndex}"></div>
+                        <div class="action-btn add-to-end-${memberCounter}"></div>
+                        <div class="action-btn delete-member-${memberCounter}"></div>
                     </div>
                 `;
 
                 const tempDiv = document.createElement("div");
-                tempDiv.classList.add(`member-row-${newMemberIndex}`);
+                tempDiv.classList.add(`member-row-${memberCounter}`);
                 tempDiv.innerHTML = newMemberHTML;
                 editList.appendChild(tempDiv);
 
                 // New member btn addEventListeners
+                const memberNumber = memberCounter;
+
                 (
                     document.querySelector(
-                        `.add-to-end-${newMemberIndex}`
+                        `.add-to-end-${memberNumber}`
                     ) as HTMLElement
                 ).addEventListener("click", () => {
-                    addMemberToEnd(newMemberIndex);
+                    addMemberToEnd(memberNumber);
                 });
 
                 (
                     document.querySelector(
-                        `.delete-member-${newMemberIndex}`
+                        `.delete-member-${memberNumber}`
                     ) as HTMLElement
                 ).addEventListener("click", () => {
-                    deleteMember(newMemberIndex);
+                    deleteMember(memberNumber);
                 });
 
-                memberBits.push([
-                    `${newMemberIndex + 1}-`,
-                    memberName,
-                    memberID,
-                ]);
+                memberBits.push([`${memberNumber + 1}-`, memberName, memberID]);
 
+                memberCounter++;
                 rerenderAddMember();
                 updateIndexes();
             }

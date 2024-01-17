@@ -27,6 +27,7 @@ const convertInputToEditableList = () => {
                 </div>
             </div>
         `;
+        memberCounter++;
     }
     for (let i = 0; i < memberBits.length; i++) {
         document.querySelector(`.add-to-end-${i}`).addEventListener("click", () => {

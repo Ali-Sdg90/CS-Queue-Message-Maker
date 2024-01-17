@@ -7,9 +7,11 @@ const demoListBtn = document.querySelector(".how-to-use-btn") as HTMLElement;
 let inputArray: string[] = [];
 let membersArray: string[] = [];
 let memberBits: string[][] = [];
-let course = "";
+let course: string = "";
+let memberCounter: number = 0;
 
 submitInput.addEventListener("click", () => {
+    memberCounter = 0;
     convertInputToEditableList();
     updateIndexes();
 });
