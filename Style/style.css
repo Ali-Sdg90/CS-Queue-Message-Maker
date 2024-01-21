@@ -95,10 +95,13 @@ body {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  height: 30px;
+  height: 29px;
   position: absolute;
   top: 0;
   left: 0;
+  outline: 2px solid rgb(15, 17, 18);
+  border-radius: 10px 10px 0 0;
+  outline-offset: -1px;
 }
 .page-main-section .arrow-indicator {
   font-size: 100px;
@@ -134,6 +137,7 @@ body {
   height: 80%;
   position: relative;
   padding-top: 30px;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 .input-section .input-list,
 .input-section .output-list,
@@ -146,6 +150,7 @@ body {
   outline: none;
   font-size: 18px;
   padding: 5px;
+  padding-bottom: 60px;
   resize: none;
   color: white;
   font-family: sans-serif;
@@ -153,14 +158,14 @@ body {
 }
 .input-section .input-list::-moz-selection, .input-section .output-list::-moz-selection, .output-section .input-list::-moz-selection, .output-section .output-list::-moz-selection {
   background-color: #1d16ae;
-  color: rgb(59, 255, 255);
+  color: #3bffff;
 }
 .input-section .input-list::selection,
 .input-section .output-list::selection,
 .output-section .input-list::selection,
 .output-section .output-list::selection {
   background-color: #1d16ae;
-  color: rgb(59, 255, 255);
+  color: #3bffff;
 }
 .input-section:hover .input-btn-container,
 .output-section:hover .input-btn-container {
@@ -221,6 +226,8 @@ body {
   background: #3e404a;
   position: relative;
   direction: rtl;
+  border: 1px solid black;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 .edit-section .edit-list-container {
   min-height: 300px;

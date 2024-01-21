@@ -10,6 +10,8 @@ let memberBits: string[][] = [];
 let memberCounter: number = 0;
 let course: string = "";
 
+const liveLink = "https://ali-sdg90.github.io/CS-Queue-Message-Maker/";
+
 submitInput.addEventListener("click", () => {
     if (input.value) {
         memberCounter = 0;

@@ -9,7 +9,11 @@ const updateOutput = () => {
         }
         outputText += "\n";
     }
-    outputText += `\n${course}`;
+    let showLink = liveLink;
+    if (course === "#دمو") {
+        showLink = "https://ali-sdg90.github.io/CS-Queue-Message-Maker/";
+    }
+    outputText += `\n${course}\n\n\nبرنامه مدریت صف برای مسئول صف:\n${showLink}`;
     output.textContent = outputText;
     const addMembers = document.querySelectorAll(".add-member");
     if (addMembers.length > 2) {

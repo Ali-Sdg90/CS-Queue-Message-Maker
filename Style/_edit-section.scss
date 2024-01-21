@@ -7,6 +7,8 @@
     background: #3e404a;
     position: relative;
     direction: rtl;
+    border: 1px solid black;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 
     .edit-list-container {
         min-height: 300px;
