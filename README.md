@@ -2,7 +2,7 @@
 <p>
     Hello! A year ago, I was in the queue for a web development course for
     <a href="https://github.com/cs-internship" target="_blank"
-        >CS-Internship</a
+        >CS Internship</a
     >
     program, observing the group admins sending updates to the queue every week.
     I always thought there must be a professional tool to organize and arrange

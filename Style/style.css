@@ -137,7 +137,7 @@ body {
   height: 80%;
   position: relative;
   padding-top: 30px;
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 .input-section .input-list,
 .input-section .output-list,
@@ -150,6 +150,7 @@ body {
   outline: none;
   font-size: 18px;
   padding: 5px;
+  padding-bottom: 60px;
   resize: none;
   color: white;
   font-family: sans-serif;
@@ -157,14 +158,14 @@ body {
 }
 .input-section .input-list::-moz-selection, .input-section .output-list::-moz-selection, .output-section .input-list::-moz-selection, .output-section .output-list::-moz-selection {
   background-color: #1d16ae;
-  color: rgb(59, 255, 255);
+  color: #3bffff;
 }
 .input-section .input-list::selection,
 .input-section .output-list::selection,
 .output-section .input-list::selection,
 .output-section .output-list::selection {
   background-color: #1d16ae;
-  color: rgb(59, 255, 255);
+  color: #3bffff;
 }
 .input-section:hover .input-btn-container,
 .output-section:hover .input-btn-container {
@@ -226,6 +227,7 @@ body {
   position: relative;
   direction: rtl;
   border: 1px solid black;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
 }
 .edit-section .edit-list-container {
   min-height: 300px;
