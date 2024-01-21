@@ -9,7 +9,7 @@ let membersArray = [];
 let memberBits = [];
 let memberCounter = 0;
 let course = "";
-const liveLink = "https://ali-sdg90.github.io/CS-Queue-Message-Maker/";
+const liveLink = "https://cs-internship.github.io/CS-Queue-Message-Maker/";
 submitInput.addEventListener("click", () => {
     if (input.value) {
         memberCounter = 0;
