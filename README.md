@@ -30,7 +30,7 @@
                 To start, access the live version of the program using
                 <a
                     target="_new"
-                    href="https://ali-sdg90.github.io/CS-Queue-Message-Maker/"
+                    href="https://cs-internship.github.io/CS-Queue-Message-Maker/"
                     >this link</a
                 >.
             </li>
