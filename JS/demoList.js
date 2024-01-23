@@ -13,7 +13,7 @@ const addDemoList = () => {
 #دمو
 
 
-برنامه مدریت صف برای مسئول صف:
+برنامه مدیریت صف برای مسئول صف:
 https://ali-sdg90.github.io/CS-Queue-Message-Maker/`;
 };
 //# sourceMappingURL=demoList.js.map
