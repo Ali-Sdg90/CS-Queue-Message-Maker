@@ -15,10 +15,7 @@ body {
     justify-content: space-between;
     align-items: center;
     font-family: sans-serif;
-}
-
-::selection {
-    background-color: transparent;
+    user-select: none;
 }
 
 ::-webkit-scrollbar {
