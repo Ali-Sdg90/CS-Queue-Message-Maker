@@ -37,6 +37,12 @@
                 border-radius: 5px;
                 padding-right: 10px;
                 overflow: hidden;
+                transition: background-color 1s;
+
+                &:hover {
+                    transition: background-color 0.15s;
+                    background: rgb(54, 54, 179);
+                }
 
                 .member-info {
                     display: flex;
@@ -138,6 +144,12 @@
                 border-radius: 5px;
                 padding: 0 5px 0 10px;
                 overflow: hidden;
+                transition: background-color 1s;
+
+                &:hover {
+                    transition: background-color 0.15s;
+                    background: rgb(51, 130, 39);
+                }
 
                 .add-member-inputs {
                     display: flex;
