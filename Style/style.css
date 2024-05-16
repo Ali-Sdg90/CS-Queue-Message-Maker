@@ -250,6 +250,11 @@ body {
   border-radius: 5px;
   padding-right: 10px;
   overflow: hidden;
+  transition: background-color 1s;
+}
+.edit-section .edit-list-container .edit-list [class*=member-row]:hover {
+  transition: background-color 0.15s;
+  background: rgb(54, 54, 179);
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .member-info {
   display: flex;
@@ -323,6 +328,11 @@ body {
   border-radius: 5px;
   padding: 0 5px 0 10px;
   overflow: hidden;
+  transition: background-color 1s;
+}
+.edit-section .edit-list-container .edit-list .add-member:hover {
+  transition: background-color 0.15s;
+  background: rgb(51, 130, 39);
 }
 .edit-section .edit-list-container .edit-list .add-member .add-member-inputs {
   display: flex;
