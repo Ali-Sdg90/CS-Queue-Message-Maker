@@ -1,9 +1,9 @@
 "use strict";
 const convertInputToEditableList = () => {
     inputArray = input.value.split("\n");
-    course = inputArray[inputArray.length - 5];
+    course = inputArray[0].split(" ")[2];
     membersArray = [];
-    for (let i = 2; i < inputArray.length - 6; i++) {
+    for (let i = 2; i < inputArray.length - 3; i++) {
         membersArray.push(inputArray[i]);
     }
     memberBits = membersArray.map((memberArray) => {

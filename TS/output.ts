@@ -17,7 +17,8 @@ const updateOutput = () => {
         showLink = "https://ali-sdg90.github.io/CS-Queue-Message-Maker/";
     }
 
-    outputText += `\n${course}\n\n-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-\nبرنامه مدیریت صف برای مسئول صف:\n${showLink}`;
+    // outputText += `\n${course}\n\n-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-\nبرنامه مدیریت صف برای مسئول صف:\n${showLink}`;
+    outputText += `\nبرنامه مدیریت صف برای مسئول صف:\n${showLink}`;
 
     output.textContent = outputText;
 
