@@ -1,3 +1,4 @@
+@import url("../Assets/fonts/Vazirmatn/fonts.css");
 * {
   padding: 0;
   margin: 0;
@@ -7,8 +8,7 @@
 
 body {
   background: rgb(19, 20, 21);
-  color: rgb(237, 235, 232);
-  width: 100%;
+  color: rgb(237, 232, 232);
   height: 100vh;
   display: flex;
   flex-flow: column nowrap;
@@ -18,10 +18,11 @@ body {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  overflow: hidden;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #232733;
@@ -29,15 +30,18 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #606060;
   border-radius: 10px;
+  padding-bottom: 30px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #858585;
 }
+::-webkit-scrollbar-thumb:vertical {
+  margin-bottom: 10px;
+}
 
 .default-properties {
-  width: 100%;
+  width: 2095px;
   background-color: rgb(27, 29, 31);
-  box-shadow: 0 0 10px 10px rgba(13, 13, 13, 0.732);
 }
 
 .custom-scale-calc {
@@ -69,18 +73,20 @@ body {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: flex-end;
-  height: 10vh;
+  height: 80px;
+  padding-bottom: 3px;
   text-shadow: 2.5px 0 rgba(98, 0, 255, 0.4), -2.5px 0 rgba(255, 0, 0, 0.4);
+  font-size: 34px;
 }
 
 .page-main-section {
   width: 100%;
-  height: 83vh;
+  height: 560px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
+  margin-bottom: 5px;
 }
 .page-main-section .section-header {
   width: 100%;
@@ -104,7 +110,7 @@ body {
 }
 
 .page-footer-section {
-  height: 7vh;
+  height: 50px;
   font-size: 20px;
   letter-spacing: 2px;
   background: rgb(15, 17, 18);
@@ -128,7 +134,7 @@ body {
   border: 1px solid rgb(0, 0, 0);
   border-radius: 10px;
   overflow: hidden;
-  height: 80%;
+  height: 490px;
   position: relative;
   padding-top: 30px;
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
@@ -142,12 +148,13 @@ body {
   background: #3e404a;
   border: none;
   outline: none;
-  font-size: 18px;
-  padding: 5px;
+  font-size: 15px;
+  padding: 7px;
   padding-bottom: 60px;
   resize: none;
   color: white;
-  font-family: sans-serif;
+  font-family: "Vazirmatn";
+  line-height: 24px;
   direction: rtl;
 }
 .input-section .input-list::-moz-selection, .input-section .output-list::-moz-selection, .output-section .input-list::-moz-selection, .output-section .output-list::-moz-selection {
@@ -213,7 +220,7 @@ body {
 
 .edit-section {
   width: 400px;
-  height: 80%;
+  height: 490px;
   border-radius: 10px;
   overflow: hidden;
   padding-top: 30px;
@@ -234,7 +241,7 @@ body {
   padding: 5px;
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(33px, 1fr));
-  gap: 5px;
+  gap: 3px;
   overflow-x: hidden;
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] {
@@ -262,15 +269,19 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 4px;
-  width: calc(100% - 70px);
+  width: calc(100% - 75px);
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .member-info .member-name {
   white-space: nowrap;
+  font-family: "Vazirmatn";
+  font-size: 15px;
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .member-info .member-id {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: "Vazirmatn";
+  font-size: 16px;
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns {
   display: flex;
@@ -289,31 +300,31 @@ body {
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=add-to-end] {
   height: 33px;
   width: 33px;
-  background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
+  background: url("../Assets/imgs/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=add-to-end]:hover {
-  background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(128, 128, 60);
+  background: url("../Assets/imgs/end-icon.png") center/23px no-repeat, rgb(128, 128, 60);
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=add-to-end]:active {
-  background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
+  background: url("../Assets/imgs/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=delete-member] {
   height: 33px;
   width: 33px;
-  background: url("../Assets/delete-icon.png") center/15px no-repeat, rgb(119, 55, 55);
+  background: url("../Assets/imgs/delete-icon.png") center/15px no-repeat, rgb(119, 55, 55);
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=delete-member]:hover {
-  background: url("../Assets/delete-icon.png") center/15px no-repeat, rgb(129, 60, 60);
+  background: url("../Assets/imgs/delete-icon.png") center/15px no-repeat, rgb(129, 60, 60);
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns [class*=delete-member]:active {
-  background: url("../Assets/delete-icon.png") center/15px no-repeat, rgb(119, 55, 55);
+  background: url("../Assets/imgs/delete-icon.png") center/15px no-repeat, rgb(119, 55, 55);
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns .disable-btn {
   cursor: default;
   opacity: 0.75;
 }
 .edit-section .edit-list-container .edit-list [class*=member-row] .action-btns .disable-btn:hover {
-  background: url("../Assets/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
+  background: url("../Assets/imgs/end-icon.png") center/23px no-repeat, rgb(119, 119, 55);
 }
 .edit-section .edit-list-container .edit-list .add-member {
   border: 1px solid rgb(42, 166, 61);
@@ -351,6 +362,8 @@ body {
   height: 24px;
   padding: 3px 5px;
   color: white;
+  font-family: "Vazirmatn";
+  font-size: 12px;
   cursor: auto;
 }
 .edit-section .edit-list-container .edit-list .add-member .add-member-inputs input::-moz-selection {
@@ -360,6 +373,14 @@ body {
 .edit-section .edit-list-container .edit-list .add-member .add-member-inputs input::selection {
   background-color: rgb(70, 187, 64);
   color: rgb(0, 73, 0);
+}
+.edit-section .edit-list-container .edit-list .add-member .add-member-inputs input::-moz-placeholder {
+  position: relative;
+  top: 1px;
+}
+.edit-section .edit-list-container .edit-list .add-member .add-member-inputs input::placeholder {
+  position: relative;
+  top: 1px;
 }
 .edit-section .edit-list-container .edit-list .add-member .add-member-btn {
   border: 1px solid rgb(0, 60, 0);
@@ -385,12 +406,16 @@ body {
 
 .how-to-use-container {
   direction: ltr;
-  padding: 7px 9px;
+  padding: 2px 4px 7px;
+}
+.how-to-use-container .how-to-use-title {
+  font-size: 18px;
+  margin: 4px 0 6px;
 }
 .how-to-use-container .how-to-use-text {
-  text-align: justify;
   line-height: 20px;
   margin-top: 10px;
+  font-size: 14px;
 }
 .how-to-use-container .how-to-use-btn {
   display: flex;
@@ -398,12 +423,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: rgb(43, 43, 144);
   border: 1px solid rgb(61, 61, 255);
   width: 100%;
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 17px;
   cursor: pointer;
   transition: background-color 0.15s, box-shadow 0.15s, transform 0.15s;
   box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.3);

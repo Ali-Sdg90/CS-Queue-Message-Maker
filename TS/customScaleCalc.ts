@@ -17,7 +17,12 @@ const customScaleCalc = () => {
             customScaleDiv.style.transform = `scale(${scale}) rotate(90deg)`;
         } else {
             customScaleDiv.classList.remove("custom-scale-calc");
-            customScaleDiv.style.transform = "";
+            // customScaleDiv.style.transform = "";
+            const scaleValue = (1 * pageHeight) / 695;
+
+            customScaleDiv.style.transform = `scale(${scaleValue})`;
+            customScaleDiv.style.display = "block";
+            customScaleDiv.style.transformOrigin = "top";
         }
     }
 };
