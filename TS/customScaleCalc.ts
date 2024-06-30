@@ -8,13 +8,33 @@ const customScaleCalc = () => {
 
     if (pageWidth > 270) {
         if (pageHeight > pageWidth) {
-            console.log(pageWidth, pageHeight);
+            // console.log(pageWidth, pageHeight);
 
             customScaleDiv.classList.add("custom-scale-calc");
 
-            let scale = 1 - ((pageHeight / pageWidth) * 0.5) / (900 / 477);
+            // let scale = 1 - ((pageHeight / pageWidth) * 0.2) / (900 / 477);
 
-            customScaleDiv.style.transform = `scale(${scale}) rotate(90deg)`;
+            // customScaleDiv.style.transform = `scale(${scale}) rotate(90deg)`;
+
+            // customScaleDiv.classList.remove("custom-scale-calc");
+            // customScaleDiv.style.transform = "";
+
+            let scaleValue = 0;
+
+            if (pageHeight / pageWidth > 1130 / 780) {
+                scaleValue = (1 * pageWidth) / 695;
+            } else {
+                scaleValue = (0.7 * pageWidth) / 695;
+            }
+
+            customScaleDiv.style.transform = `scale(${scaleValue}) rotate(90deg)`;
+            customScaleDiv.style.display = "block";
+
+            // customScaleDiv.style.top = `${(pageHeight - 920 * scaleValue)/2}px`;
+
+            // customScaleDiv.style.transformOrigin = "top";
+
+            // console.log("scale", scale);
         } else {
             customScaleDiv.classList.remove("custom-scale-calc");
             // customScaleDiv.style.transform = "";

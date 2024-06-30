@@ -7,7 +7,7 @@
 }
 
 body {
-  background: rgb(19, 20, 21);
+  background-color: rgb(27, 29, 31);
   color: rgb(237, 232, 232);
   height: 100vh;
   display: flex;
@@ -40,14 +40,15 @@ body {
 }
 
 .default-properties {
-  width: 2095px;
+  width: 100%;
   background-color: rgb(27, 29, 31);
 }
 
 .custom-scale-calc {
-  width: 140vh;
-  overflow: hidden;
-  position: absolute;
+  transform-origin: center;
+  position: relative;
+  top: 24vh;
+  width: 1000px;
 }
 
 @keyframes shake {
@@ -154,7 +155,7 @@ body {
   resize: none;
   color: white;
   font-family: "Vazirmatn";
-  line-height: 24px;
+  line-height: 22px;
   direction: rtl;
 }
 .input-section .input-list::-moz-selection, .input-section .output-list::-moz-selection, .output-section .input-list::-moz-selection, .output-section .output-list::-moz-selection {
