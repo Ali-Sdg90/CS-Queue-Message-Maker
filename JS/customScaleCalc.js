@@ -13,15 +13,14 @@ const customScaleCalc = () => {
             else {
                 scaleValue = (0.7 * pageWidth) / 695;
             }
-            customScaleDiv.style.transform = `scale(${scaleValue}) rotate(90deg)`;
-            customScaleDiv.style.display = "block";
+            customScaleDiv.style.transform = `scale(${scaleValue}) rotate(90deg) translate(50%, -50%)`;
+            customScaleDiv.style.top = `${(pageHeight - 1000 * scaleValue) / 2}px`;
         }
         else {
             customScaleDiv.classList.remove("custom-scale-calc");
             const scaleValue = (1 * pageHeight) / 695;
             customScaleDiv.style.transform = `scale(${scaleValue})`;
-            customScaleDiv.style.display = "block";
-            customScaleDiv.style.transformOrigin = "top";
+            customScaleDiv.style.width = `${pageWidth / scaleValue}px`;
         }
     }
 };

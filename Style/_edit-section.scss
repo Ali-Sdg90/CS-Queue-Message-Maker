@@ -1,6 +1,5 @@
 .edit-section {
     width: 400px;
-    // height: 80%;
     height: 490px;
     border-radius: 10px;
     overflow: hidden;
@@ -10,6 +9,7 @@
     direction: rtl;
     border: 1px solid black;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+    margin: 0 0.6vw;
 
     .edit-list-container {
         min-height: 300px;

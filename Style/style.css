@@ -42,13 +42,12 @@ body {
 .default-properties {
   width: 100%;
   background-color: rgb(27, 29, 31);
+  transform-origin: top;
 }
 
 .custom-scale-calc {
-  transform-origin: center;
   position: relative;
-  top: 24vh;
-  width: 1000px;
+  width: 1000px !important;
 }
 
 @keyframes shake {
@@ -139,6 +138,7 @@ body {
   position: relative;
   padding-top: 30px;
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  margin: 0 0.6vw;
 }
 .input-section .input-list,
 .input-section .output-list,
@@ -230,6 +230,7 @@ body {
   direction: rtl;
   border: 1px solid black;
   box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+  margin: 0 0.6vw;
 }
 .edit-section .edit-list-container {
   min-height: 300px;
