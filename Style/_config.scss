@@ -6,9 +6,8 @@
 }
 
 body {
-    background: rgb(19, 20, 21);
-    color: rgb(237, 235, 232);
-    width: 100%;
+    background-color: rgb(27, 29, 31);
+    color: rgb(237, 232, 232);
     height: 100vh;
     display: flex;
     flex-flow: column nowrap;
@@ -16,10 +15,11 @@ body {
     align-items: center;
     font-family: sans-serif;
     user-select: none;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 
     &-track {
         background: #232733;
@@ -28,9 +28,14 @@ body {
     &-thumb {
         background: #606060;
         border-radius: 10px;
+        padding-bottom: 30px;
 
         &:hover {
             background: #858585;
+        }
+
+        &:vertical {
+            margin-bottom: 10px;
         }
     }
 }

@@ -20,7 +20,7 @@
     updates. The program has a simple interface, and you can easily understand
     how to use it by reading the included "How to use" guide within the program.
 </p>
-<img src="./Assets/README-GIF.gif" alt="how-to-use-gif" style="width: 100%" />
+<img src="./Assets/imgs/README-GIF.gif" alt="how-to-use-gif" style="width: 100%" />
 <h2>How to Use CS-Queue-Message-Maker:</h2>
 <ol>
     <li>

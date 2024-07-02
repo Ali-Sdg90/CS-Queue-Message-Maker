@@ -4,10 +4,11 @@
     border: 1px solid rgb(0, 0, 0);
     border-radius: 10px;
     overflow: hidden;
-    height: 80%;
+    height: 490px;
     position: relative;
     padding-top: 30px;
     box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+    margin: 0 0.6vw;
 
     .input-list,
     .output-list {
@@ -16,12 +17,13 @@
         background: #3e404a;
         border: none;
         outline: none;
-        font-size: 18px;
-        padding: 5px;
+        font-size: 15px;
+        padding: 7px;
         padding-bottom: 60px;
         resize: none;
         color: white;
-        font-family: sans-serif;
+        font-family: "Vazirmatn";
+        line-height: 22px;
         direction: rtl;
 
         &::selection {
