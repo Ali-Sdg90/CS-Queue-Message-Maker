@@ -408,7 +408,7 @@ body {
 
 .how-to-use-container {
   direction: ltr;
-  padding: 2px 4px 7px;
+  padding: 2px 5px 7px;
 }
 .how-to-use-container .how-to-use-title {
   font-size: 18px;
@@ -429,7 +429,7 @@ body {
   background-color: rgb(43, 43, 144);
   border: 1px solid rgb(61, 61, 255);
   width: 100%;
-  margin-top: 20px;
+  margin-top: 16px;
   font-size: 17px;
   cursor: pointer;
   transition: background-color 0.15s, box-shadow 0.15s, transform 0.15s;
