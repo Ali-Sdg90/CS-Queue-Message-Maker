@@ -13,7 +13,7 @@ const updateOutput = () => {
     if (course === "#دمو") {
         showLink = "https://ali-sdg90.github.io/CS-Queue-Message-Maker/";
     }
-    outputText += `\nبرنامه‌ی مدیریت صف برای مسئول صف:\n${showLink}`;
+    outputText += `\nبرنامه‌ مدیریت صف برای مسئول صف:\n${showLink}`;
     output.textContent = outputText;
     const addMembers = document.querySelectorAll(".add-member");
     if (addMembers.length > 2) {

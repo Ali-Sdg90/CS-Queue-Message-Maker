@@ -18,7 +18,7 @@ const updateOutput = () => {
     }
 
     // outputText += `\n${course}\n\n-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-ـ-\nبرنامه مدیریت صف برای مسئول صف:\n${showLink}`;
-    outputText += `\nبرنامه‌ی مدیریت صف برای مسئول صف:\n${showLink}`;
+    outputText += `\nبرنامه‌ مدیریت صف برای مسئول صف:\n${showLink}`;
 
     output.textContent = outputText;
 
