@@ -1,7 +1,7 @@
 "use strict";
 const updateOutput = () => {
     let outputText = "";
-    outputText += `آپدیت صف ${course} 👇🏻\n\n`;
+    outputText += ` #آپدیت_صف مصاحبه دوره ${course} 👇🏻\n\n`;
     for (let i = 0; i < memberBits.length; i++) {
         outputText += `${i + 1}-`;
         for (let j = 1; j < memberBits[i].length; j++) {
