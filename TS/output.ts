@@ -26,7 +26,7 @@ const updateOutput = () => {
 
     // console.log(addMembers, addMembers.length);
     if (addMembers.length > 2) {
-        console.log("REMOVE");
+        // console.log("REMOVE");
 
         addMembers[addMembers.length - 2].remove();
     }
@@ -38,7 +38,7 @@ copyBtn.addEventListener("click", () => {
     if (output.textContent) {
         // Copy function
         navigator.clipboard.writeText(output.textContent).then(() => {
-            console.log(`Copied to clipboard`);
+            // console.log(`Copied to clipboard`);
             copyBtn.textContent = "Copied";
             setTimeout(() => {
                 copyBtn.textContent = "Copy";

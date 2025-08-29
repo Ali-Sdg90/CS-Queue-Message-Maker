@@ -1,5 +1,5 @@
 const addDemoList = () => {
-    input.value = `آپدیت صف #دمو 👇🏻
+    input.value = `#آپدیت_صف مصاحبه دوره #دمو 👇🏻
 
 1- علی صادقی @Ali_Sdg90
 2- حسام حسنی @HessamHasaniWP
