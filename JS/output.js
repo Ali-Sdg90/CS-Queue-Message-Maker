@@ -17,7 +17,6 @@ const updateOutput = () => {
     output.textContent = outputText;
     const addMembers = document.querySelectorAll(".add-member");
     if (addMembers.length > 2) {
-        console.log("REMOVE");
         addMembers[addMembers.length - 2].remove();
     }
 };
@@ -25,7 +24,6 @@ const copyBtn = document.querySelector(".copy-output");
 copyBtn.addEventListener("click", () => {
     if (output.textContent) {
         navigator.clipboard.writeText(output.textContent).then(() => {
-            console.log(`Copied to clipboard`);
             copyBtn.textContent = "Copied";
             setTimeout(() => {
                 copyBtn.textContent = "Copy";

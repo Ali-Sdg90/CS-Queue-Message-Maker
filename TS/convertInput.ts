@@ -1,7 +1,14 @@
 const convertInputToEditableList = () => {
     inputArray = input.value.split("\n");
 
-    course = inputArray[0].split(" ")[2];
+    if (
+        inputArray[0].split(" ").filter((word) => word.startsWith("#")).length >
+        1
+    ) {
+        course = inputArray[0].split(" ")[3];
+    } else {
+        course = inputArray[0].split(" ")[2];
+    }
 
     membersArray = [];
 
@@ -15,7 +22,7 @@ const convertInputToEditableList = () => {
         return memberArray.split(" ");
     });
 
-    console.log(JSON.stringify(memberBits, null, 2));
+    // console.log(JSON.stringify(memberBits, null, 2));
 
     // Clear How-to or old queue-list
     editList.innerHTML = "";
